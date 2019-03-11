@@ -5,7 +5,9 @@ core: 8.x
 package: GovCMS
 configure: consultation.settings
 dependencies:
-  - drupal:node
-  - drupal:webform
-  - drupal:field_group
   - drupal:comment
+  - drupal:datetime_range
+  - drupal:field_group
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:webform
