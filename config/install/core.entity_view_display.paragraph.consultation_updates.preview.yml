@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.consultation_updates.field_cons_update_date
+    - field.field.paragraph.consultation_updates.field_cons_update_link
+    - field.field.paragraph.consultation_updates.field_cons_update_title
+    - field.field.paragraph.consultation_updates.field_cons_update_type
+    - paragraphs.paragraphs_type.consultation_updates
+  module:
+    - datetime
+    - layout_builder
+    - link
+third_party_settings:
+  layout_builder:
+    sections: {  }
+    allow_custom: false
+    enabled: false
+id: paragraph.consultation_updates.preview
+targetEntityType: paragraph
+bundle: consultation_updates
+mode: preview
+content:
+  field_cons_update_date:
+    weight: 3
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_cons_update_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_cons_update_title:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cons_update_type:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

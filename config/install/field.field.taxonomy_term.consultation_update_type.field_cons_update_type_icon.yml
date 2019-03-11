@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_cons_update_type_icon
+    - taxonomy.vocabulary.consultation_update_type
+  module:
+    - file
+id: taxonomy_term.consultation_update_type.field_cons_update_type_icon
+field_name: field_cons_update_type_icon
+entity_type: taxonomy_term
+bundle: consultation_update_type
+label: Icon
+description: 'Upload an svg or png icon to represent this update type.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: consultation/icons
+  file_extensions: 'svg png'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

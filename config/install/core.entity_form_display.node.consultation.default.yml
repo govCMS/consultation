@@ -1,4 +1,3 @@
-uuid: 98403b57-40fa-42cd-9165-75b97748e780
 langcode: en
 status: true
 dependencies:
@@ -12,11 +11,14 @@ dependencies:
     - field.field.node.consultation.field_cons_formal_subs_notify
     - field.field.node.consultation.field_cons_forum_heading
     - field.field.node.consultation.field_cons_forum_intro
+    - field.field.node.consultation.field_cons_issue_documentation
     - field.field.node.consultation.field_cons_issue_text
     - field.field.node.consultation.field_cons_late_subs
     - field.field.node.consultation.field_cons_outcomes_text
     - field.field.node.consultation.field_cons_short_comments
     - field.field.node.consultation.field_cons_summary
+    - field.field.node.consultation.field_cons_updates
+    - field.field.node.consultation.field_cons_webform
     - node.type.consultation
   module:
     - comment
@@ -25,18 +27,19 @@ dependencies:
     - field_group
     - field_layout
     - layout_discovery
+    - paragraphs
     - path
     - text
+    - webform
 third_party_settings:
   field_layout:
     id: layout_onecol
     settings: {  }
   field_group:
     group_issue:
-      children:
-        - field_cons_issue_text
+      children: {  }
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: fieldset
       format_settings:
         id: ''
@@ -46,28 +49,25 @@ third_party_settings:
       label: 'The issue'
       region: content
     group_consultation_vtabs:
-      children:
-        - group_outcomes
-        - group_updates
-        - group_formal_submissions
-        - group_twitter
-        - group_discussion_settings
+      children: {  }
       parent_name: ''
-      weight: 12
-      format_type: tabs
+      weight: 15
+      format_type: fieldset
       format_settings:
         label: 'Consultation tabs'
         direction: vertical
         id: ''
         classes: ''
+        effect: none
+        description: ''
+        required_fields: true
       label: 'Consultation tabs'
       region: content
     group_outcomes:
-      children:
-        - field_cons_outcomes_text
-      parent_name: group_consultation_vtabs
-      weight: 13
-      format_type: tab
+      children: {  }
+      parent_name: ''
+      weight: 16
+      format_type: fieldset
       format_settings:
         label: Outcomes
         formatter: closed
@@ -79,9 +79,9 @@ third_party_settings:
       region: content
     group_updates:
       children: {  }
-      parent_name: group_consultation_vtabs
-      weight: 14
-      format_type: tab
+      parent_name: ''
+      weight: 18
+      format_type: fieldset
       format_settings:
         label: Updates/Milestones
         formatter: closed
@@ -92,17 +92,10 @@ third_party_settings:
       label: Updates/Milestones
       region: content
     group_formal_submissions:
-      children:
-        - field_cons_formal_subs_enabled
-        - field_cons_short_comments
-        - field_cons_file_uploads
-        - field_cons_formal_subs_notify
-        - field_cons_late_subs
-        - field_cons_formal_subs_cta1
-        - field_cons_formal_subs_cta2
-      parent_name: group_consultation_vtabs
-      weight: 15
-      format_type: tab
+      children: {  }
+      parent_name: ''
+      weight: 20
+      format_type: fieldset
       format_settings:
         label: 'Formal Submissions'
         formatter: closed
@@ -114,9 +107,9 @@ third_party_settings:
       region: content
     group_twitter:
       children: {  }
-      parent_name: group_consultation_vtabs
-      weight: 16
-      format_type: tab
+      parent_name: ''
+      weight: 28
+      format_type: fieldset
       format_settings:
         label: 'Twitter discussion'
         formatter: closed
@@ -127,12 +120,10 @@ third_party_settings:
       label: 'Twitter discussion'
       region: content
     group_discussion_settings:
-      children:
-        - field_cons_forum_heading
-        - field_cons_forum_intro
-      parent_name: group_consultation_vtabs
-      weight: 17
-      format_type: tab
+      children: {  }
+      parent_name: ''
+      weight: 29
+      format_type: fieldset
       format_settings:
         label: 'Informal discussions'
         formatter: closed
@@ -143,7 +134,7 @@ third_party_settings:
       label: 'Informal discussions'
       region: content
 _core:
-  default_config_hash: TTJC2JFS5IiRidK40YYLGJNEvELQgtjmj0NSgXncMZo
+  default_config_hash: w9pKmhdgFeZqruA97-_1m9qvZQ-4dI1E8b3eMnZDRWY
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation
@@ -151,31 +142,31 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_cons_comments:
-    weight: 26
+    weight: 32
     settings: {  }
     third_party_settings: {  }
     type: comment_default
     region: content
   field_cons_date:
-    weight: 10
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: daterange_default
     region: content
   field_cons_file_uploads:
-    weight: 17
+    weight: 23
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_cons_formal_subs_cta1:
-    weight: 20
+    weight: 26
     settings:
       rows: 5
       placeholder: ''
@@ -183,7 +174,7 @@ content:
     type: text_textarea
     region: content
   field_cons_formal_subs_cta2:
-    weight: 21
+    weight: 27
     settings:
       rows: 5
       placeholder: ''
@@ -191,14 +182,14 @@ content:
     type: text_textarea
     region: content
   field_cons_formal_subs_enabled:
-    weight: 15
+    weight: 21
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_cons_formal_subs_notify:
-    weight: 18
+    weight: 24
     settings:
       size: 60
       placeholder: ''
@@ -206,7 +197,7 @@ content:
     type: email_default
     region: content
   field_cons_forum_heading:
-    weight: 22
+    weight: 30
     settings:
       size: 60
       placeholder: ''
@@ -214,15 +205,34 @@ content:
     type: string_textfield
     region: content
   field_cons_forum_intro:
-    weight: 23
+    weight: 31
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_cons_issue_documentation:
+    type: paragraphs
+    weight: 14
+    settings:
+      title: Document
+      title_plural: Documents
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: consultation_documentation
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
   field_cons_issue_text:
-    weight: 12
+    weight: 13
     settings:
       rows: 5
       placeholder: ''
@@ -230,14 +240,14 @@ content:
     type: text_textarea
     region: content
   field_cons_late_subs:
-    weight: 19
+    weight: 25
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_cons_outcomes_text:
-    weight: 14
+    weight: 17
     settings:
       rows: 5
       placeholder: ''
@@ -245,29 +255,62 @@ content:
     type: text_textarea
     region: content
   field_cons_short_comments:
-    weight: 16
+    weight: 22
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
     region: content
   field_cons_summary:
-    weight: 9
+    weight: 10
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_cons_updates:
+    type: paragraphs
+    weight: 19
+    settings:
+      title: Update
+      title_plural: Updates
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: consultation_updates
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: '0'
+    third_party_settings: {  }
+    region: content
+  field_cons_webform:
+    weight: 33
+    settings:
+      default_data: true
+    third_party_settings: {  }
+    type: webform_entity_reference_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
-    weight: 7
+    weight: 8
     settings: {  }
     region: content
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -275,21 +318,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 4
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
@@ -310,7 +353,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }

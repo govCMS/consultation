@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_updates
+    - node.type.consultation
+    - paragraphs.paragraphs_type.consultation_updates
+  module:
+    - entity_reference_revisions
+id: node.consultation.field_cons_updates
+field_name: field_cons_updates
+entity_type: node
+bundle: consultation
+label: Updates
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      consultation_updates: consultation_updates
+    target_bundles_drag_drop:
+      consultation_documentation:
+        weight: 10
+        enabled: false
+      consultation_updates:
+        enabled: true
+        weight: 11
+      cta:
+        weight: 12
+        enabled: false
+      curated:
+        weight: 13
+        enabled: false
+      data:
+        weight: 14
+        enabled: false
+      existingblock:
+        weight: 15
+        enabled: false
+      html:
+        weight: 16
+        enabled: false
+      links:
+        weight: 17
+        enabled: false
+      namedpage:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

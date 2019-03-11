@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_cons_late_subs
     - node.type.consultation
+_core:
+  default_config_hash: M9Ux_XP_NbZZJAxfO9ZrAgwS4Auc3yQ0DTMvz2YFPpw
 id: node.consultation.field_cons_late_subs
 field_name: field_cons_late_subs
 entity_type: node

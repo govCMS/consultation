@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_cons_formal_subs_enabled
     - node.type.consultation
+_core:
+  default_config_hash: rZdzSFcPnxPEK9t12Vl2Vo2r26fYZz0CkyxXcQ9tusE
 id: node.consultation.field_cons_formal_subs_enabled
 field_name: field_cons_formal_subs_enabled
 entity_type: node

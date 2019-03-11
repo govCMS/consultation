@@ -6,6 +6,8 @@ dependencies:
     - node.type.consultation
   module:
     - text
+_core:
+  default_config_hash: jkbeByjEx5gT2hJGyw06dVbG2u7f0KvV1Fk4ATct6DY
 id: node.consultation.field_cons_issue_text
 field_name: field_cons_issue_text
 entity_type: node

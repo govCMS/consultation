@@ -6,6 +6,8 @@ dependencies:
     - node.type.consultation
   module:
     - datetime_range
+_core:
+  default_config_hash: aiNFv4Em-StFGvWrSV4jP5QYg9AhnsZitsIB8dA5xa8
 id: node.consultation.field_cons_date
 field_name: field_cons_date
 entity_type: node

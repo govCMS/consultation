@@ -6,6 +6,8 @@ dependencies:
     - node.type.consultation
   module:
     - text
+_core:
+  default_config_hash: IphE-z8ofQ8JB1-0i7vC7WY9yV5OIHtrKjD-lKRyYeo
 id: node.consultation.field_cons_formal_subs_cta2
 field_name: field_cons_formal_subs_cta2
 entity_type: node

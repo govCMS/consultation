@@ -3,6 +3,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: Csd3-IErcvK0RvriLYoct-4iiy0QemI9Wr3_OPN22Hs
 id: node.field_cons_short_comments
 field_name: field_cons_short_comments
 entity_type: node

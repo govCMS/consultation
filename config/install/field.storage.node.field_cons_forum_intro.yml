@@ -4,6 +4,8 @@ dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: e1hnqrfTpXB-vn5wxwlGj_hqDSpB9tlpU03a3yFjDYA
 id: node.field_cons_forum_intro
 field_name: field_cons_forum_intro
 entity_type: node

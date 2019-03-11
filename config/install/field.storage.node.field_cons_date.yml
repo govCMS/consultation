@@ -4,6 +4,8 @@ dependencies:
   module:
     - datetime_range
     - node
+_core:
+  default_config_hash: BpDpXfGvZMlXJgeqwbLWPv8wRXX0lbPLG3lyBcKqdv8
 id: node.field_cons_date
 field_name: field_cons_date
 entity_type: node

@@ -3,6 +3,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 25THD0G5fas-wf2ytAEgVwqGEIrXIUw7oHSp4wSl-9g
 id: node.field_cons_file_uploads
 field_name: field_cons_file_uploads
 entity_type: node

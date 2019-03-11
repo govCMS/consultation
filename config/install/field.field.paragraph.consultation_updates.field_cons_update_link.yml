@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cons_update_link
+    - paragraphs.paragraphs_type.consultation_updates
+  module:
+    - link
+id: paragraph.consultation_updates.field_cons_update_link
+field_name: field_cons_update_link
+entity_type: paragraph
+bundle: consultation_updates
+label: 'Update information link'
+description: 'If you wish to link this update to more verbose information please supply a URL.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

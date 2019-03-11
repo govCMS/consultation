@@ -4,6 +4,8 @@ dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: OVYMmfVfiM7-IXbIt2f7lj_n_q4SYQyI2qfcX1Au-Lk
 id: node.field_cons_formal_subs_cta2
 field_name: field_cons_formal_subs_cta2
 entity_type: node

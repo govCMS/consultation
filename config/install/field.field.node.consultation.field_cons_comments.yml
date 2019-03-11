@@ -1,4 +1,3 @@
-uuid: e34b811c-99e6-4b39-94e0-17494706e730
 langcode: en
 status: true
 dependencies:
@@ -7,6 +6,8 @@ dependencies:
     - node.type.consultation
   module:
     - comment
+_core:
+  default_config_hash: 9irjIWmgB0smUN1z21gL95JodGEkocs2cKY--LhxEE8
 id: node.consultation.field_cons_comments
 field_name: field_cons_comments
 entity_type: node

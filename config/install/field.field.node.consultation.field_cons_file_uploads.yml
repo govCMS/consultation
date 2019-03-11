@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_cons_file_uploads
     - node.type.consultation
+_core:
+  default_config_hash: KGjevjpfsv9ZNegGDlrs8M4gkYhBkPpjnWYRJWAfiW0
 id: node.consultation.field_cons_file_uploads
 field_name: field_cons_file_uploads
 entity_type: node

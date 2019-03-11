@@ -3,6 +3,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: 5_KaBpNgzYHQiv4AUJd-uQ5w3qAGFaTlz7QhkKqFK4Q
 id: node.field_cons_formal_subs_enabled
 field_name: field_cons_formal_subs_enabled
 entity_type: node

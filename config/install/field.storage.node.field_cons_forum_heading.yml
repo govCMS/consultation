@@ -3,6 +3,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: gQXRJo4gluCtU2fLY6BEl1y0xeAVB7bcB4m0dDWUHUc
 id: node.field_cons_forum_heading
 field_name: field_cons_forum_heading
 entity_type: node

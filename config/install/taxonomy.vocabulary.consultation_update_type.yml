@@ -1,7 +1,9 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'Update type'
+_core:
+  default_config_hash: o6l8QikpAzuor-xqrm8rq3xOTFxtB2-3h1zMrkXkueI
+name: 'Consultations: Update type'
 vid: consultation_update_type
 description: ''
 hierarchy: 0

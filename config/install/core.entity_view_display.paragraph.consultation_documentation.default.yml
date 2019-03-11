@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.consultation_documentation.field_cons_file_description
+    - field.field.paragraph.consultation_documentation.field_cons_file_pdf
+    - field.field.paragraph.consultation_documentation.field_cons_file_title
+    - field.field.paragraph.consultation_documentation.field_cons_file_word
+    - field.field.paragraph.consultation_documentation.field_cons_submission_date
+    - paragraphs.paragraphs_type.consultation_documentation
+  module:
+    - datetime
+    - file
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    sections: {  }
+id: paragraph.consultation_documentation.default
+targetEntityType: paragraph
+bundle: consultation_documentation
+mode: default
+content:
+  field_cons_file_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_cons_file_pdf:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+    region: content
+  field_cons_file_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cons_file_word:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+    region: content
+  field_cons_submission_date:
+    weight: 1
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: fallback
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+hidden: {  }

@@ -4,6 +4,8 @@ dependencies:
   module:
     - node
     - text
+_core:
+  default_config_hash: xkFrTIQ9Dc5aV0hAD4FU1kk2HnsTy8uv2AC0RsdWK90
 id: node.field_cons_outcomes_text
 field_name: field_cons_outcomes_text
 entity_type: node

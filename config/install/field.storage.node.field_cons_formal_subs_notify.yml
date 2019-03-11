@@ -3,6 +3,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: iL_Tyl1Q6Y6NeZWQI0Kpj3E_hz_obQ1YNzhl5xoockk
 id: node.field_cons_formal_subs_notify
 field_name: field_cons_formal_subs_notify
 entity_type: node

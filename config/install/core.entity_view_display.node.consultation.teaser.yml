@@ -3,9 +3,25 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.consultation.field_cons_comments
+    - field.field.node.consultation.field_cons_date
+    - field.field.node.consultation.field_cons_file_uploads
+    - field.field.node.consultation.field_cons_formal_subs_cta1
+    - field.field.node.consultation.field_cons_formal_subs_cta2
+    - field.field.node.consultation.field_cons_formal_subs_enabled
+    - field.field.node.consultation.field_cons_formal_subs_notify
+    - field.field.node.consultation.field_cons_forum_heading
+    - field.field.node.consultation.field_cons_forum_intro
+    - field.field.node.consultation.field_cons_issue_text
+    - field.field.node.consultation.field_cons_late_subs
+    - field.field.node.consultation.field_cons_outcomes_text
+    - field.field.node.consultation.field_cons_short_comments
+    - field.field.node.consultation.field_cons_summary
     - node.type.consultation
   module:
     - user
+_core:
+  default_config_hash: YQmvcWkoqL08-4tKh3KfdfiJ5y3PwFiis02a0olAqJM
 id: node.consultation.teaser
 targetEntityType: node
 bundle: consultation
@@ -17,16 +33,18 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_cons_comments: true
   field_cons_date: true
-  field_cons_issue_text: true
-  field_cons_summary: true
-  field_cons_forum_heading: true
-  field_cons_forum_intro: true
-  field_cons_late_subs: true
   field_cons_file_uploads: true
   field_cons_formal_subs_cta1: true
   field_cons_formal_subs_cta2: true
   field_cons_formal_subs_enabled: true
   field_cons_formal_subs_notify: true
+  field_cons_forum_heading: true
+  field_cons_forum_intro: true
+  field_cons_issue_text: true
+  field_cons_late_subs: true
   field_cons_outcomes_text: true
   field_cons_short_comments: true
+  field_cons_summary: true
+  langcode: true

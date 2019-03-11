@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cons_file_pdf
+    - paragraphs.paragraphs_type.consultation_documentation
+  module:
+    - file
+id: paragraph.consultation_documentation.field_cons_file_pdf
+field_name: field_cons_file_pdf
+entity_type: paragraph
+bundle: consultation_documentation
+label: 'File (PDF)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'consultation/[date:custom:Y]-[date:custom:m]'
+  file_extensions: pdf
+  max_filesize: 10MB
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

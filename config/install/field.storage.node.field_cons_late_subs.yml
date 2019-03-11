@@ -3,6 +3,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: YJPflaZ836OCtlkskFqfrfDIh_5f22jXSbvegVLQsgk
 id: node.field_cons_late_subs
 field_name: field_cons_late_subs
 entity_type: node

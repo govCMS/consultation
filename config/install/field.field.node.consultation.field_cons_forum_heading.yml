@@ -4,6 +4,8 @@ dependencies:
   config:
     - field.storage.node.field_cons_forum_heading
     - node.type.consultation
+_core:
+  default_config_hash: z-W3LjZNjkrp-84j7YpeWhxUKhfUEeDpnsgnp1Dh6AY
 id: node.consultation.field_cons_forum_heading
 field_name: field_cons_forum_heading
 entity_type: node
