@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the system module.
+ */
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_install().
+ */
+function consultation_install() {
+
+  // Machine name of the Taxonomy vocabulary.
+  $vocab = 'consultation_update_type';
+
+  // Term names to be added.
+  $items = [
+    'Comment count',
+    'Consultation ended',
+    'Consultation started',
+    'Consultation update',
+    'Documentation update',
+    'Number of consultation views',
+    'Number of formal submissions',
+    'Number of social shares',
+    'Poll result',
+  ];
+  foreach ($items as $item) {
+    // @todo add the svg icons automatically.
+    Term::create([
+      'parent' => [],
+      'name' => $item,
+      'vid' => $vocab,
+    ])->save();
+  }
+
+}

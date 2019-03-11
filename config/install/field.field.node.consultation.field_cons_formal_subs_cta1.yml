@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_formal_subs_cta1
+    - node.type.consultation
+  module:
+    - text
+id: node.consultation.field_cons_formal_subs_cta1
+field_name: field_cons_formal_subs_cta1
+entity_type: node
+bundle: consultation
+label: 'Formal submission introduction'
+description: 'This call to action text will display above the ''Have your say'' button.'
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>The Department invites people and organisations interested in [ INSERT CONSULTATION DETAILS ] to tell us their views on this topic.</p>\r\n"
+    format: rich_text
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,170 @@
+langcode: en
+status: closed
+dependencies: {  }
+_core:
+  default_config_hash: 2T6C-6DnbYUiDb14wGwVeK2pmgEVRbfSVqV5dfvBA_8
+open: null
+close: null
+weight: 0
+uid: 1
+template: false
+archive: false
+id: consultation_template
+title: 'Consultations Submissions Template'
+description: 'This form is used as the basis for any new Have Your Say consultation.'
+category: template
+elements: "admin_display_approval:\n  '#type': select\n  '#title': hys_formal_approved_for_display\n  '#description': 'As an administrator check this box if this submission has been approved for display. &nbsp;The submission will then appear against the associated Consultation.'\n  '#options':\n    approved_for_display: 'Approved for public display'\nstep_submission:\n  '#type': fieldset\n  '#title': 'Step 1: Your submission'\n  markup_your_submission:\n    '#type': processed_text\n    '#format': rich_text\n  remain_anonymous:\n    '#type': select\n    '#title': remain_anonymous\n    '#description': 'Please select if you prefer your submission to remain anonymous. This means your submission will display on the website with the name Anonymous and your name and/or organisation will not appear anywhere on the website.'\n    '#options':\n      anonymous: 'Remain Anonymous'\n  private_submission:\n    '#type': select\n    '#title': private_submission\n    '#description': 'Please select if you prefer for your submission and/or any additional documents not to be displayed or made publicly available on the website. For more details please see our &lt;a href=&quot;privacy&quot;&gt;Privacy Policy&lt;/a&gt;.'\n    '#options':\n      private: 'Private submission'\n  published_name:\n    '#type': textfield\n    '#title': 'Published name'\n    '#placeholder': 'Published name'\n    '#required': true\n  short_comment:\n    '#type': textarea\n    '#title': Comments\n    '#description': 'Please leave a short submission comment no longer than 500 characters.'\n    '#maxlength': '537'\n  uploads:\n    '#type': managed_file\n    '#title': 'Submission files'\n    '#description': 'You can attach up to 4 submission files.'\nstep_contact:\n  '#type': fieldset\n  '#title': 'Step 2: Contact details'\n  first_name:\n    '#type': textfield\n    '#title': first_name\n    '#required': true\n  last_name:\n    '#type': textfield\n    '#title': last_name\n    '#required': true\n  company_name:\n    '#type': textfield\n    '#title': 'Organisation (if applicable)'\n    '#placeholder': 'Your company'\n  email:\n    '#type': email\n    '#title': Email\n    '#placeholder': 'Your email address'\n    '#required': true\n  phone:\n    '#type': textfield\n    '#title': 'Phone number'\n    '#help': \"Please enter an Australian landline or mobile phone number including area code.<br />\\r\\n<em>e.g: 07 1234 5678 or 041 1234 567</em>\"\n    '#placeholder': 'Your phone number'\n  privacy:\n    '#type': processed_text\n    '#text': \"<p><strong>Publication, Confidentiality and Privacy of Submissions Instructions</strong></p>\\r\\n\\r\\n<p>We may use your details to contact you regarding your submission and we will never share any of your contact details or make your email, or phone number public abiding by our <a href=\\\"#\\\">Privacy Policy</a>.</p>\\r\\n\"\n    '#format': rich_text\nconsultation_id:\n  '#type': hidden\n  '#title': 'Consultation Id'\nemail_notification:\n  '#type': hidden\n  '#title': email_notification"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_title: both
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_remote_addr: true
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  submission_label: ''
+  submission_log: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

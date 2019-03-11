@@ -1,0 +1,11 @@
+name: Consultation
+type: module
+description: Provides a Consultation for accepting submissions.
+core: 8.x
+package: GovCMS
+configure: consultation.settings
+dependencies:
+  - drupal:node
+  - drupal:webform
+  - drupal:field_group
+  - drupal:comment

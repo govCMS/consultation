@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override to display a consultation node.
+ *
+ * @see node.html.twig
+ * @see template_preprocess_node()
+ */
+#}
+<article{{ attributes }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes }}>
+    {{ content }}
+  </div>
+
+</article>

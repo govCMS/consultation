@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_summary
+    - node.type.consultation
+  module:
+    - text
+id: node.consultation.field_cons_summary
+field_name: field_cons_summary
+entity_type: node
+bundle: consultation
+label: 'Consultation summary'
+description: 'A consultation summary will display at the top of a consultation page, as well as wherever content is promoted.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Update type'
+vid: consultation_update_type
+description: ''
+hierarchy: 0
+weight: 0

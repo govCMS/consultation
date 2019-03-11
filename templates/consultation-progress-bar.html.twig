@@ -1,0 +1,37 @@
+{#
+/**
+ * @file
+ * Template for a consultation progress bar.
+ *
+ * Available variables:
+ *  - date_start: datetime object.
+ *  - date_end: datetime object.
+ *  - percentage_complete: number between 0 and 100.
+ *  - days_remain: calculated days remaining, float.
+ *  - days_total: total days of the campaign, float.
+ *  - status_class:
+ *  - status_message:
+ */
+#}
+<div class="consultation-progress-bar {{ status_class }}">
+  <div class="progress-summary">
+    <div class="start-date">
+      <span>Start</span> {{ date_start|date("l, F j, Y - H:i") }}
+    </div>
+    <div class="end-date">
+      <span>End</span> {{ date_end|date("l, F j, Y - H:i") }}
+    </div>
+  </div>
+  <div class="progress-bar">
+    <div class="bar-completed" style="width:{{ percentage_complete }}%;"></div>
+  </div>
+  <div class="progress-remaining">
+    <span class="remaining-label">Days remaining</span>
+    <span class="remaining-highlight">{{ days_remain|round(0, 'ceil') }}</span> of {{ days_total|round(0, 'ceil') }}
+  </div>
+  {% if status_message %}
+    <div class="status-message">
+      {{ status_message }}
+    </div>
+  {% endif %}
+</div>

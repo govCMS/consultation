@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_file_uploads
+    - node.type.consultation
+id: node.consultation.field_cons_file_uploads
+field_name: field_cons_file_uploads
+entity_type: node
+bundle: consultation
+label: 'File attachments enabled'
+description: 'When enabled the ‘File uploads'' will be displayed.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,9 @@
+styles:
+  css:
+    theme:
+      css/consultation.css: {}
+  js:
+    js/consultation.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

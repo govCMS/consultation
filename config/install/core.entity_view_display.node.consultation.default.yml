@@ -1,0 +1,136 @@
+uuid: a4e9e3af-8be3-4e6f-9d9b-5de6509bf280
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.consultation.field_cons_comments
+    - field.field.node.consultation.field_cons_date
+    - field.field.node.consultation.field_cons_file_uploads
+    - field.field.node.consultation.field_cons_formal_subs_cta1
+    - field.field.node.consultation.field_cons_formal_subs_cta2
+    - field.field.node.consultation.field_cons_formal_subs_enabled
+    - field.field.node.consultation.field_cons_formal_subs_notify
+    - field.field.node.consultation.field_cons_forum_heading
+    - field.field.node.consultation.field_cons_forum_intro
+    - field.field.node.consultation.field_cons_issue_text
+    - field.field.node.consultation.field_cons_late_subs
+    - field.field.node.consultation.field_cons_outcomes_text
+    - field.field.node.consultation.field_cons_short_comments
+    - field.field.node.consultation.field_cons_summary
+    - node.type.consultation
+  module:
+    - comment
+    - datetime_range
+    - text
+    - user
+_core:
+  default_config_hash: cFfBl77zVWlHJ11k_XepF9fNzKDa8Sbg0OyvFaRbgG4
+id: node.consultation.default
+targetEntityType: node
+bundle: consultation
+mode: default
+content:
+  field_cons_comments:
+    weight: 13
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_cons_date:
+    weight: 2
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_cons_formal_subs_cta1:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_formal_subs_cta2:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_formal_subs_notify:
+    type: basic_string
+    weight: 9
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_cons_forum_heading:
+    weight: 7
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cons_forum_intro:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_issue_text:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_late_subs:
+    type: boolean
+    weight: 11
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_cons_outcomes_text:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_short_comments:
+    type: boolean
+    weight: 12
+    region: content
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+  field_cons_summary:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_cons_file_uploads: true
+  field_cons_formal_subs_enabled: true

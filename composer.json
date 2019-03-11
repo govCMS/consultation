@@ -1,9 +1,0 @@
-{
-  "name": "govcms/consultation",
-  "type": "drupal-module",
-  "description": "Consulation or 'Have your say'",
-  "keywords": ["govcms", "drupal"],
-  "license": "GPL-2.0",
-  "minimum-stability": "dev",
-  "prefer-stable": true
-}

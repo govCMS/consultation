@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_formal_subs_enabled
+    - node.type.consultation
+id: node.consultation.field_cons_formal_subs_enabled
+field_name: field_cons_formal_subs_enabled
+entity_type: node
+bundle: consultation
+label: 'Formal submission enabled'
+description: 'When enabled the ''Have Your Say'' formal submission functionality will be enabled.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

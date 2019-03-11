@@ -1,0 +1,143 @@
+<?php
+
+/**
+ * @file
+ * Module file for consultation.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\consultation\ConsultationNodeHelper;
+
+/**
+ * Implements hook_theme().
+ */
+function consultation_theme() {
+  return [
+    // Allow the module to provide a default template for the consultation node.
+    'node__consultation' => [
+      'template' => 'node--consultation',
+      'base hook' => 'node',
+    ],
+    'paragraph__consultation_updates' => [
+      'template' => 'paragraph--consultation-updates',
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__consultation_documentation' => [
+      'template' => 'paragraph--consultation-documentation',
+      'base hook' => 'paragraph',
+    ],
+    'field__field_cons_webform' => [
+      'template' => 'field--field-cons-webform',
+      'base hook' => 'field',
+    ],
+    // The coloured progress bar.
+    'consultation_progress_bar' => [
+      'variables' => [
+        'date_start' => NULL,
+        'date_end' => NULL,
+        'percentage_complete' => NULL,
+        'days_remain' => NULL,
+        'days_total' => NULL,
+        'status_class' => NULL,
+        'status_message' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function consultation_entity_extra_field_info() {
+  $extra = [];
+
+  $extra['node']['consultation']['display']['consultation_progress_bar'] = [
+    'label' => t('Progress bar'),
+    'description' => t('Consultation progress bar'),
+    'weight' => 0,
+    'visible' => TRUE,
+  ];
+
+  $extra['node']['consultation']['display']['consultation_public_submissions'] = [
+    'label' => t('Public submissions'),
+    'description' => t('Formal submissions marked as public'),
+    'weight' => 0,
+    'visible' => TRUE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function consultation_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  if ('consultation' != $entity->bundle()) {
+    return;
+  }
+
+  $build['#attached']['library'][] = 'consultation/styles';
+
+  $helper = new ConsultationNodeHelper($entity);
+  if ($display->getComponent('consultation_progress_bar')) {
+    $percent = $helper->getPercentageComplete();
+    $build['consultation_progress_bar'] = [
+      '#theme' => 'consultation_progress_bar',
+      '#date_start' => $helper->getDateStart(),
+      '#date_end' => $helper->getDateEnd(),
+      '#percentage_complete' => $helper->getPercentageComplete(),
+      '#days_remain' => $helper->getDaysRemaining(),
+      '#days_total' => $helper->getDaysTotal(),
+      '#status_class' => ($percent > 99) ? 'progress-complete' : '',
+      '#status_message' => $helper->getStatusMessage(),
+    ];
+  }
+
+  if ($display->getComponent('consultation_public_submissions')) {
+    $build['consultation_public_submissions'] = [
+      '#type' => 'markup',
+      '#markup' => 'This is my custom content B',
+    ];
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function consultation_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $pg */
+  $pg = $variables['paragraph'];
+
+  // Add icons to consultation_updates paragraphs.
+  if ($pg->bundle() == 'consultation_updates') {
+    $term = $pg->field_cons_update_type->entity;
+    if ($file = $term->field_cons_update_type_icon->entity) {
+      $variables['icon_path'] = $file->URL();
+    }
+    else {
+      $module_path = drupal_get_path('module', 'consultation');
+      $variables['icon_path'] = "/$module_path/assets/update_comment.png";
+    }
+  }
+
+  // Prepare variables for consultation_document paragraph.
+  if ($pg->bundle() == 'consultation_documentation') {
+    if ($file = $pg->field_cons_file_pdf->entity) {
+      $variables['pdf_path'] = $file->URL();
+      $variables['pdf_mime'] = $file->filemime->value;
+      $variables['pdf_size'] = $file->filesize->value;
+      $variables['pdf_size_readable'] = format_size($file->filesize->value);
+    }
+    if ($file = $pg->field_cons_file_word->entity) {
+      $variables['doc_path'] = $file->URL();
+      $variables['doc_mime'] = $file->filemime->value;
+      $variables['doc_size'] = $file->filesize->value;
+      $variables['doc_size_readable'] = format_size($file->filesize->value);
+    }
+
+  }
+
+}

@@ -1,0 +1,76 @@
+/* Progress bar */
+
+.consultation-progress-bar .progress-summary {
+  padding: 0.25rem 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.consultation-progress-bar .start-date {
+    width: 50%;
+    float: left;
+}
+
+.consultation-progress-bar .end-date {
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.consultation-progress-bar .progress-remaining {
+float: right;
+    text-align: right;
+    color: #616161;
+}
+
+.consultation-progress-bar .remaining-label {
+  display: block;
+}
+
+.consultation-progress-bar .remaining-highlight {
+  font-weight: bold;
+}
+
+.consultation-progress-bar .progress-bar {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  background-color: #e4e4e4;
+}
+
+.consultation-progress-bar .bar-completed {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  background-color: #55c7e3;
+  background-position: 50% 100%;
+}
+
+/* Updates tab / terms */
+
+.consultation-update {
+  overflow: hidden;
+}
+
+.consultation-update .update-icon {
+  float: left;
+  margin-right: 1rem;
+  width: 6rem;
+  text-align: center;
+  padding-top: 1rem;
+  min-height: 5rem;
+}
+
+.consultation-update .update-title {
+  font-size: 1.8rem;
+  line-height: 3.15rem;
+  font-weight: 500;
+  margin: 1rem 0 0;
+}
+
+.consultation-update .update-date {
+  font-size: 1.25rem;
+  line-height: 2.1875rem;
+  color: #616161;
+  margin-bottom: 0;
+}

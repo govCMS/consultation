@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_forum_heading
+    - node.type.consultation
+id: node.consultation.field_cons_forum_heading
+field_name: field_cons_forum_heading
+entity_type: node
+bundle: consultation
+label: 'Discussion Forum heading'
+description: 'When filled in and when comments are enabled; this heading will display above the Discussion component.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

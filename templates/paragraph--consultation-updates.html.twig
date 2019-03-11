@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Paragraph override for consultation_updates.
+ *
+ * Additional variables:
+ * - icon_path: SVG or PNG file path.
+ *
+ * @see paragraph.html.twig()
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  ]
+%}
+<div class="consultation-update">
+  <div class="update-icon">
+    <img typeof="foaf:Image" src="{{ icon_path }}" alt="update icon">
+  </div>
+  {% if content.field_cons_update_link %}
+    <div class="update-title">{{ content.field_cons_update_title }}</div>
+  {% else %}
+    <div class="update-title">
+      <a href="{{ content.field_cons_update_link }}">{{ content.field_cons_update_title }}</a>
+    </div>
+  {% endif %}
+  <div class="update-date">{{ content.field_cons_update_date }}</div>
+</div>

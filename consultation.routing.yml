@@ -1,0 +1,9 @@
+consultation.settings:
+  path: '/admin/config/consultation/settings'
+  defaults:
+    _form: '\Drupal\consultation\Form\ConsultationSettingsForm'
+    _title: 'Consultation'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

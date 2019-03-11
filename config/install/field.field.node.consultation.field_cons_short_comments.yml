@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_short_comments
+    - node.type.consultation
+id: node.consultation.field_cons_short_comments
+field_name: field_cons_short_comments
+entity_type: node
+bundle: consultation
+label: 'Short comments enabled'
+description: 'When enabled the ''Short comments'' field will be displayed.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
