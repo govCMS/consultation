@@ -4,8 +4,9 @@ AKA: Have your say
 
 ## Status
 
-This module is roadmapped for the govcms distribution and being
-developed courtesy of acma.gov.au Drupal 8 project.
+This module is originally developed by Dept Communications DOCA)
+and is roadmapped for the D8 GovCMS distribution. Being updated
+courtesy of the Aust Communications Media Authority (ACMA).
 
 There are outstanding issues and TODOs  with it:
 
