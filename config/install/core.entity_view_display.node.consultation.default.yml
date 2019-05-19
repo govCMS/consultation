@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.consultation.field_cons_formal_subs_cta2
     - field.field.node.consultation.field_cons_formal_subs_enabled
     - field.field.node.consultation.field_cons_formal_subs_notify
+    - field.field.node.consultation.field_cons_formal_subs_public
     - field.field.node.consultation.field_cons_forum_heading
     - field.field.node.consultation.field_cons_forum_intro
     - field.field.node.consultation.field_cons_issue_documentation
@@ -107,7 +108,7 @@ third_party_settings:
       label: Participate
       region: content
 _core:
-  default_config_hash: KCDWGAjJMwKabmm0V8wcUpY5TC7nQARUmLCfpT278RQ
+  default_config_hash: yzpGRabZhuLKmqH-SSoc6VvsqOthLdKcwD2P_T9Y4rQ
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation
@@ -154,6 +155,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+  field_cons_formal_subs_public:
+    weight: 25
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_cons_forum_heading:
     weight: 5
     label: hidden
