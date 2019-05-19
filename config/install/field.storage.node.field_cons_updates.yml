@@ -1,3 +1,4 @@
+uuid: 34281652-84b3-49fe-a0c3-2399c0361b9f
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+_core:
+  default_config_hash: g9UIOY8_bKsQVmdJ7FvY9_rlpditVYtnG8SMSNUZWwU
 id: node.field_cons_updates
 field_name: field_cons_updates
 entity_type: node

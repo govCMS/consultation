@@ -1,3 +1,4 @@
+uuid: 43e59604-f2f6-4341-aae4-6b15692346ac
 langcode: en
 status: true
 dependencies:
@@ -145,7 +146,7 @@ third_party_settings:
       label: 'Informal discussions'
       region: content
 _core:
-  default_config_hash: HMX2MURoxI8QHuPk2DkczPJIGXeUcLMqfKFuo_OBFRk
+  default_config_hash: ZeM9MDXvtTNRmZimpV56LT-7RjGPP-gtixGrNR8kQSE
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation

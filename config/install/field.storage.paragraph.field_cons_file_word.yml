@@ -1,9 +1,12 @@
+uuid: 6f679e97-50f3-4a2b-a275-158c813e80a3
 langcode: en
 status: true
 dependencies:
   module:
     - file
     - paragraphs
+_core:
+  default_config_hash: g68FQQB97wrWD6OW4_ixo1n-cPytCRANbRnXVl2Q6ZE
 id: paragraph.field_cons_file_word
 field_name: field_cons_file_word
 entity_type: paragraph

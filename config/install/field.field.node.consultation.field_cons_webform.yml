@@ -1,12 +1,15 @@
+uuid: d14edc6c-79e7-4897-ba4d-99b116cb7c23
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_cons_webform
     - node.type.consultation
-    - webform.webform.consultation_default
+    - webform.webform.consultations_submissions_templa
   module:
     - webform
+_core:
+  default_config_hash: xiYj4BFzPFHda5dHn7RTp_RJ2YTTx9lTaNd5d7tL-Og
 id: node.consultation.field_cons_webform
 field_name: field_cons_webform
 entity_type: node

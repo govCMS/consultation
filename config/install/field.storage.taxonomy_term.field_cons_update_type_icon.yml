@@ -1,9 +1,12 @@
+uuid: 2a5ae4c5-1b8f-46ea-b888-12e7eb20d5c3
 langcode: en
 status: true
 dependencies:
   module:
     - file
     - taxonomy
+_core:
+  default_config_hash: P7Vb4sBHiAbiarN6c-WsWXIZ7ImLr1aYZ6Dgg6IiPT4
 id: taxonomy_term.field_cons_update_type_icon
 field_name: field_cons_update_type_icon
 entity_type: taxonomy_term

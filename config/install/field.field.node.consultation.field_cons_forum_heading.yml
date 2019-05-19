@@ -1,3 +1,4 @@
+uuid: 174d1e40-456a-4c2a-a0bd-754615c845d0
 langcode: en
 status: true
 dependencies:
@@ -5,7 +6,7 @@ dependencies:
     - field.storage.node.field_cons_forum_heading
     - node.type.consultation
 _core:
-  default_config_hash: z-W3LjZNjkrp-84j7YpeWhxUKhfUEeDpnsgnp1Dh6AY
+  default_config_hash: kGibyo-E8ohNDpYyK__NvMXvaK5x1XiiBVgn6ff9C0o
 id: node.consultation.field_cons_forum_heading
 field_name: field_cons_forum_heading
 entity_type: node

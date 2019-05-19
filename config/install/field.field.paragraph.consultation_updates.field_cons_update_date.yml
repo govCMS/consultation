@@ -1,3 +1,4 @@
+uuid: 2cb45086-5c23-4458-9596-e88437bc269e
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.consultation_updates
   module:
     - datetime
+_core:
+  default_config_hash: TI9ztvFlzLzG2SMCzstEHbQl6vXSQ6BI8ne_7dvoBQw
 id: paragraph.consultation_updates.field_cons_update_date
 field_name: field_cons_update_date
 entity_type: paragraph

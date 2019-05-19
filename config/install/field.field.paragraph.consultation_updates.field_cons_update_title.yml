@@ -1,9 +1,12 @@
+uuid: 40736e52-ba22-479d-996d-cca69f490411
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_cons_update_title
     - paragraphs.paragraphs_type.consultation_updates
+_core:
+  default_config_hash: xtQyDj5w6xN9gMUfKxjRI7sywIa-IwGHl_oVoMkN8l4
 id: paragraph.consultation_updates.field_cons_update_title
 field_name: field_cons_update_title
 entity_type: paragraph

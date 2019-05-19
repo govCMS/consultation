@@ -1,9 +1,12 @@
+uuid: 208e48c8-ebb7-4256-ad50-6975deb6f703
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - webform
+_core:
+  default_config_hash: 2qIrsZ825M4hy-45TYX0VdxBok6k8koSVyuUppTANg0
 id: node.field_cons_webform
 field_name: field_cons_webform
 entity_type: node

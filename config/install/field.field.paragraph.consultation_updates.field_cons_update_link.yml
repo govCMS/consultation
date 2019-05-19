@@ -1,3 +1,4 @@
+uuid: c9afa0e6-3849-43a8-ac3a-ceb4127a9734
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - paragraphs.paragraphs_type.consultation_updates
   module:
     - link
+_core:
+  default_config_hash: ZHIuudT1tJLrzRU7gP-7AVA8Ga7np2Jbf8Ar06vxTCU
 id: paragraph.consultation_updates.field_cons_update_link
 field_name: field_cons_update_link
 entity_type: paragraph

@@ -1,9 +1,12 @@
+uuid: af107e40-f8eb-4aff-a145-15c984c8d7ea
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - taxonomy
+_core:
+  default_config_hash: A5DcXYDBbR1pmalynEklnkJGLzKl3UgBw-I2yesQ1R4
 id: paragraph.field_cons_update_type
 field_name: field_cons_update_type
 entity_type: paragraph

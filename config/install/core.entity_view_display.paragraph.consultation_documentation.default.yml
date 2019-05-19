@@ -1,3 +1,4 @@
+uuid: cdcea2b2-31f4-40bd-8e4d-7e6ce023af6d
 langcode: en
 status: true
 dependencies:
@@ -11,6 +12,8 @@ dependencies:
   module:
     - datetime
     - file
+_core:
+  default_config_hash: ntZgorvJpMilIbhGXhMar1Iz7iSXrBa4GdJqxUpVzXQ
 id: paragraph.consultation_documentation.default
 targetEntityType: paragraph
 bundle: consultation_documentation

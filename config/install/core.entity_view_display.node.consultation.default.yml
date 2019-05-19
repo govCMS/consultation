@@ -1,3 +1,4 @@
+uuid: 6b7a2bfd-7efa-461c-854c-d39fb90a4de1
 langcode: en
 status: true
 dependencies:
@@ -106,7 +107,7 @@ third_party_settings:
       label: Participate
       region: content
 _core:
-  default_config_hash: IetnxLMjlMB9tD8kk4MGLaSFRRJgMfjC6d25REbbTws
+  default_config_hash: KCDWGAjJMwKabmm0V8wcUpY5TC7nQARUmLCfpT278RQ
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation

@@ -1,8 +1,9 @@
+uuid: 088dbd59-4dfd-43a4-9f37-73e21efb2fe9
 langcode: en
 status: closed
 dependencies: {  }
 _core:
-  default_config_hash: 2T6C-6DnbYUiDb14wGwVeK2pmgEVRbfSVqV5dfvBA_8
+  default_config_hash: qJgw5pL6TQs7jnQaMIfSXU0PdRct-ei3Lg0ClV2J2l0
 open: null
 close: null
 weight: 0

@@ -1,3 +1,4 @@
+uuid: f75202ee-1a53-4440-8e16-40149019fdd3
 langcode: en
 status: true
 dependencies:
@@ -7,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: 7ighpYW9yRjP1JmkF4rScG6kLvGiuztwB5EiYX6MX9Y
+  default_config_hash: wbvA2ci6-kwcaSkT6CtfvTsDDn5p-VO3Rwrf0SSCUH0
 id: node.consultation.field_cons_forum_intro
 field_name: field_cons_forum_intro
 entity_type: node

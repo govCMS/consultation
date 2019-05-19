@@ -1,3 +1,4 @@
+uuid: 75fc77b0-1c0c-4a7c-ae34-e2717e228377
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - field.storage.paragraph.field_cons_update_type
     - paragraphs.paragraphs_type.consultation_updates
     - taxonomy.vocabulary.consultation_update_type
+_core:
+  default_config_hash: gxMFSQYYepFCHHXZwUf7sxy5-Md0grPkdFHweKUdNps
 id: paragraph.consultation_updates.field_cons_update_type
 field_name: field_cons_update_type
 entity_type: paragraph

@@ -1,3 +1,4 @@
+uuid: bf063f78-135d-44c2-92a9-15575806e778
 langcode: en
 status: true
 dependencies:
@@ -10,6 +11,8 @@ dependencies:
   module:
     - datetime
     - link
+_core:
+  default_config_hash: ny-tE39hwTCK0pA4z03xsJwytwi83Jm7kf2bUMklTyY
 id: paragraph.consultation_updates.default
 targetEntityType: paragraph
 bundle: consultation_updates

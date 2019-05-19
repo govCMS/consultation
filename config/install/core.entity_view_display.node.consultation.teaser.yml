@@ -1,3 +1,4 @@
+uuid: aa5ff588-6b03-4f12-b489-46189a26727b
 langcode: en
 status: true
 dependencies:
@@ -12,21 +13,33 @@ dependencies:
     - field.field.node.consultation.field_cons_formal_subs_notify
     - field.field.node.consultation.field_cons_forum_heading
     - field.field.node.consultation.field_cons_forum_intro
+    - field.field.node.consultation.field_cons_issue_documentation
     - field.field.node.consultation.field_cons_issue_text
     - field.field.node.consultation.field_cons_late_subs
     - field.field.node.consultation.field_cons_outcomes_text
     - field.field.node.consultation.field_cons_short_comments
     - field.field.node.consultation.field_cons_summary
+    - field.field.node.consultation.field_cons_updates
     - node.type.consultation
   module:
     - user
 _core:
-  default_config_hash: YQmvcWkoqL08-4tKh3KfdfiJ5y3PwFiis02a0olAqJM
+  default_config_hash: 9U5VIaXkSZpjqueoTjLa4v5eWUuQTx1QBeie_4-lp-g
 id: node.consultation.teaser
 targetEntityType: node
 bundle: consultation
 mode: teaser
 content:
+  consultation_progress_bar:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  consultation_public_submissions:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 100
     settings: {  }
@@ -42,9 +55,11 @@ hidden:
   field_cons_formal_subs_notify: true
   field_cons_forum_heading: true
   field_cons_forum_intro: true
+  field_cons_issue_documentation: true
   field_cons_issue_text: true
   field_cons_late_subs: true
   field_cons_outcomes_text: true
   field_cons_short_comments: true
   field_cons_summary: true
+  field_cons_updates: true
   langcode: true

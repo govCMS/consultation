@@ -1,3 +1,4 @@
+uuid: 144b698f-c11c-4c43-a18a-0fbf0bd5ab4f
 langcode: en
 status: true
 dependencies:
@@ -5,7 +6,7 @@ dependencies:
     - field.storage.node.field_cons_formal_subs_enabled
     - node.type.consultation
 _core:
-  default_config_hash: rZdzSFcPnxPEK9t12Vl2Vo2r26fYZz0CkyxXcQ9tusE
+  default_config_hash: P6KTBS3E14HDPuBZ6qLK92o4RFv_cmSuFAl8J-5Zmpk
 id: node.consultation.field_cons_formal_subs_enabled
 field_name: field_cons_formal_subs_enabled
 entity_type: node

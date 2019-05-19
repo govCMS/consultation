@@ -1,3 +1,4 @@
+uuid: df383aae-642b-44ad-beae-c5d3896ee127
 langcode: en
 status: true
 dependencies:
@@ -11,6 +12,8 @@ dependencies:
   module:
     - datetime
     - file
+_core:
+  default_config_hash: VCMn0sm2TW0YhjTOR99Nm-gLISYBqd3GMWDxyTOrIYE
 id: paragraph.consultation_documentation.default
 targetEntityType: paragraph
 bundle: consultation_documentation

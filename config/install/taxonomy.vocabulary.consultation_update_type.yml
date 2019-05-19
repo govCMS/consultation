@@ -1,10 +1,10 @@
+uuid: 0beb0bb4-a742-40f6-bed5-0f81d652db06
 langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: o6l8QikpAzuor-xqrm8rq3xOTFxtB2-3h1zMrkXkueI
+  default_config_hash: oDb13fZQ2OgdGTs06Th9XmhcBg8wnbnU-AM1-cwc4S8
 name: 'Consultations: Update type'
 vid: consultation_update_type
 description: ''
-hierarchy: 0
 weight: 0

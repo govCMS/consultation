@@ -1,9 +1,12 @@
+uuid: f79bb463-9fec-440d-ab10-64d0376b1d22
 langcode: en
 status: true
 dependencies:
   module:
     - datetime
     - paragraphs
+_core:
+  default_config_hash: mzTqZBlpEPeO5DhrMeptI1meXzcxknVMu2xkOPHI7qw
 id: paragraph.field_cons_update_date
 field_name: field_cons_update_date
 entity_type: paragraph

@@ -1,3 +1,4 @@
+uuid: b58c7a9a-a134-4e29-92fd-21cf0bec19ee
 langcode: en
 status: true
 dependencies:
@@ -5,7 +6,7 @@ dependencies:
     - datetime_range
     - node
 _core:
-  default_config_hash: BpDpXfGvZMlXJgeqwbLWPv8wRXX0lbPLG3lyBcKqdv8
+  default_config_hash: 25fqQrS01WOGJ2XB9C5ym1MEqDfY13PphBu0H4W6obo
 id: node.field_cons_date
 field_name: field_cons_date
 entity_type: node

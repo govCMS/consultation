@@ -1,10 +1,11 @@
+uuid: 1e323b83-586a-415d-8d69-1d9279b120e4
 langcode: en
 status: true
 dependencies:
   module:
     - node
 _core:
-  default_config_hash: 5_KaBpNgzYHQiv4AUJd-uQ5w3qAGFaTlz7QhkKqFK4Q
+  default_config_hash: H_U4sNaHTax5Z8ADTJXC3UHKUtjKgGgz0iIaJKXxJQ8
 id: node.field_cons_formal_subs_enabled
 field_name: field_cons_formal_subs_enabled
 entity_type: node

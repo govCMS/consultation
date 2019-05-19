@@ -1,8 +1,11 @@
+uuid: 379eb17e-429e-4ea2-b4d6-1ddbe9d25754
 langcode: en
 status: true
 dependencies:
   config:
     - taxonomy.vocabulary.consultation_update_type
+_core:
+  default_config_hash: j6evg3AyV85lxkoOVd-Y7FOiFvsLTJywMyawFdne3Ys
 id: taxonomy_term.consultation_update_type
 target_entity_type_id: taxonomy_term
 target_bundle: consultation_update_type

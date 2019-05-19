@@ -1,3 +1,4 @@
+uuid: 70c5734e-0ecd-4f48-bd2f-7b1fb50f5403
 langcode: en
 status: true
 dependencies:
@@ -6,6 +7,8 @@ dependencies:
     - taxonomy.vocabulary.consultation_update_type
   module:
     - file
+_core:
+  default_config_hash: Pdi7zwMD0w30StYhWUK0vlL9PUSjUzgltBWtZMDzRr0
 id: taxonomy_term.consultation_update_type.field_cons_update_type_icon
 field_name: field_cons_update_type_icon
 entity_type: taxonomy_term

@@ -1,3 +1,4 @@
+uuid: 458ef0c2-68be-40f8-8cfe-3e9f4998022e
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.consultation_documentation
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: zVMWwCpoNOr9wyzg2YfIgh4WiZLP6tPiiR3sc1rCetw
 id: node.consultation.field_cons_issue_documentation
 field_name: field_cons_issue_documentation
 entity_type: node

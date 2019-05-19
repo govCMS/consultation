@@ -1,3 +1,4 @@
+uuid: 4cd5f812-8506-45e1-9bac-ba484c60bfea
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
   module:
     - file
     - text
+_core:
+  default_config_hash: 84kp3Y5_Gs2zfTNiNXxJfLJRb-TwzxqPZ2GanZoARCE
 id: taxonomy_term.consultation_update_type.default
 targetEntityType: taxonomy_term
 bundle: consultation_update_type
