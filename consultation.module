@@ -100,10 +100,9 @@ function consultation_node_view(array &$build, EntityInterface $entity, EntityVi
   }
 
   if ($display->getComponent('consultation_public_submissions')) {
-    $build['consultation_public_submissions'] = [
-      '#type' => 'markup',
-      '#markup' => 'Will be the results',
-    ];
+    $submissions = $helper->getPublicSubmissionsDisplay();
+
+    $build['consultation_public_submissions'] = $submissions;
   }
 
   if ($display->getComponent('consultation_status')) {

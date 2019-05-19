@@ -2,9 +2,8 @@
 
 namespace Drupal\consultation;
 
-use Drupal\Core\Entity\Exception\InvalidLinkTemplateException;
+use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
-use mysql_xdevapi\Exception;
 
 /**
  * Provides logic functions for consultation node type.
@@ -34,6 +33,14 @@ class ConsultationNodeHelper {
    * @var \Drupal\Component\Datetime\DateTimePlus
    */
   private $endDate;
+
+  // Twisted logic just trying to match element names, carry over from D7 webform element names.
+  const SUB_DISPLAY_APPROVAL = 'display';
+  const SUB_DISPLAY_APPROVAL_NOT = 'hide';
+  const SUB_PRIVATE_SUBMISSION = 'private';
+  const SUB_PRIVATE_SUBMISSION_NOT = 'public';
+  const SUB_REMAIN_ANONYMOUS = 'anonymous';
+  const SUB_REMAIN_ANONYMOUS_NOT = 'display';
 
   /**
    * ConsultationNodeHelper constructor.
@@ -136,6 +143,54 @@ class ConsultationNodeHelper {
 
   // @phpcs:ignore
   public function getLateSubmissionUrl() {}
+
+  public function getWebformId() {
+    if (!$this->node->field_cons_webform->isEmpty()) {
+      return $this->node->field_cons_webform->first()->entity->id();
+    }
+  }
+
+  public function getPublicSubmissionsDisplay() {
+    if (FALSE || $this->isSubmissionsNowPublic()) {
+      return FALSE;
+    }
+
+    $webform_id = $this->getWebformId();
+    $output = [];
+
+    // @todo inject t.
+    $header_table = [
+      'name' => 'Submitted by',
+      'submission' => 'Submission',
+    ];
+
+    $rows = [];
+    $query = \Drupal::entityQuery('webform_submission')
+      ->condition('webform_id', $webform_id);
+    $result = $query->execute();
+
+    $storage = \Drupal::entityTypeManager()->getStorage('webform_submission');
+    $submissions = $storage->loadMultiple($result);
+    foreach ($submissions as $submission) {
+      $data = $submission->getData();
+      //var_dump($data); die();
+      $file = File::load($data['uploads'][0]);
+      $rows[] = [
+        'name' => $data['published_name'],
+        'submission' => $file->getFileUri(),
+      ];
+    }
+
+    $output['table'] = [
+      '#type' => 'table',
+      '#header' => $header_table,
+      '#rows' => $rows,
+      '#empty' => 'No public submissions',
+    ];
+
+    return $output;
+  }
+
 
   /**
    * Get the status text of the consultation.
