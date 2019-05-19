@@ -78,7 +78,7 @@ third_party_settings:
         - group_summary_updates
         - group_summary_outcome
       parent_name: ''
-      weight: 3
+      weight: 2
       format_type: tabs
       format_settings:
         id: ''
@@ -93,10 +93,9 @@ third_party_settings:
         - field_cons_webform
         - field_cons_formal_subs_cta2
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: html_element
       format_settings:
-        label: Participate
         element: div
         show_label: true
         label_element: h3
@@ -120,7 +119,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   consultation_public_submissions:
-    weight: 1
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -148,25 +147,8 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_cons_formal_subs_notify:
-    type: basic_string
-    weight: 7
-    region: content
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-  field_cons_formal_subs_public:
-    weight: 25
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
   field_cons_forum_heading:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -174,7 +156,7 @@ content:
     type: string
     region: content
   field_cons_forum_intro:
-    weight: 6
+    weight: 5
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -204,7 +186,7 @@ content:
     type: text_default
     region: content
   field_cons_summary:
-    weight: 2
+    weight: 1
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -246,6 +228,8 @@ hidden:
   field_cons_comments: true
   field_cons_file_uploads: true
   field_cons_formal_subs_enabled: true
+  field_cons_formal_subs_notify: true
+  field_cons_formal_subs_public: true
   field_cons_late_subs: true
   field_cons_short_comments: true
   langcode: true
