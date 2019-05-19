@@ -101,7 +101,10 @@ class ConsultationNodeHelper {
    *   The number of days or 0 if it's ended.
    */
   public function getDaysRemaining() {
-    if (time() > $this->endDate->format('U')) {
+    if ($this->isNotStarted()) {
+      return $this->getDaysTotal();
+    }
+    elseif ($this->isFinished()) {
       return 0;
     }
     else {
@@ -116,11 +119,19 @@ class ConsultationNodeHelper {
    *   Percentage as a number between 0 and 100.
    */
   public function getPercentageComplete() {
-    $seconds = $this->getDateEnd('U') - $this->getDateStart('U');
-    $seconds_remaining = $this->getDateEnd('U') - time();
-    $percentage = $seconds_remaining / $seconds * 100;
-    $percentage = max(0, min(100, $percentage));
-    return round($percentage);
+    if ($this->isNotStarted()) {
+      return 0;
+    }
+    elseif ($this->isFinished()) {
+      return 100;
+    }
+    else {
+      $seconds = $this->getDateEnd('U') - $this->getDateStart('U');
+      $seconds_remaining = $this->getDateEnd('U') - time();
+      $percentage = $seconds_remaining / $seconds * 100;
+      $percentage = max(0, min(100, $percentage));
+      return round($percentage);
+    }
   }
 
   // @phpcs:ignore
@@ -152,9 +163,13 @@ class ConsultationNodeHelper {
       return 'Closed';
     }
     elseif ($this->isNotStarted()) {
-      return 'Not started';
+      return 'Starts in ' . round(($this->getDateStart('U') - time()) / 86400) . ' days';
+    }
+    elseif ($this->isFinished()) {
+      return 'Closed';
     }
     else {
+      die('x');
       return 'In progress';
     }
   }
@@ -182,8 +197,8 @@ class ConsultationNodeHelper {
     elseif ($this->isSubmissionsNowPublic()) {
       $classes[] = 'cons-progress-closed';
     }
-    elseif ($this->getDaysRemaining() <= 0) {
-      $classes[] = 'cons-progress-review';
+    elseif ($this->isFinished()) {
+      $classes[] = 'cons-progress-closed';
     }
     else {
       $classes[] = 'cons-progress-open';
@@ -198,7 +213,14 @@ class ConsultationNodeHelper {
    * Has the consultation period started.
    */
   public function isNotStarted() {
-    return (bool) time() < $this->endDate->format('U');
+    return (bool) (time() < $this->startDate->format('U'));
+  }
+
+  /**
+   * Has the consultation period started.
+   */
+  public function isFinished() {
+    return (bool) $this->getDaysRemaining() <= 0;
   }
 
   // @phpcs:ignore
@@ -209,5 +231,6 @@ class ConsultationNodeHelper {
   public function isSubmissionsNowPublic() {
     return (bool) $this->node->field_cons_formal_subs_public->value;
   }
+
 
 }
