@@ -9,11 +9,10 @@
  *  - percentage_complete: number between 0 and 100.
  *  - days_remain: calculated days remaining, float.
  *  - days_total: total days of the campaign, float.
- *  - status_class:
  *  - status_message:
  */
 #}
-<div class="consultation-progress-bar {{ status_class }}">
+<div class="consultation-progress-bar">
   <div class="progress-summary">
     <div class="start-date">
       <span>Start</span> {{ date_start|date("l, F j, Y - H:i") }}

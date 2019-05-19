@@ -2,7 +2,9 @@
 
 namespace Drupal\consultation;
 
+use Drupal\Core\Entity\Exception\InvalidLinkTemplateException;
 use Drupal\node\Entity\Node;
+use mysql_xdevapi\Exception;
 
 /**
  * Provides logic functions for consultation node type.
@@ -37,6 +39,10 @@ class ConsultationNodeHelper {
    * ConsultationNodeHelper constructor.
    */
   public function __construct(Node $node) {
+    if ('consultation' != $node->bundle()) {
+      throw new \Exception('This class must be initialized with a consultation node.');
+    }
+
     $this->node = $node;
     $this->startDate = $this->node->field_cons_date->start_date;
     $this->endDate = $this->node->field_cons_date->end_date;
@@ -120,13 +126,88 @@ class ConsultationNodeHelper {
   // @phpcs:ignore
   public function getLateSubmissionUrl() {}
 
-  // @phpcs:ignore
-  public function getStatusMessage() {return '';}
+  /**
+   * Get the status text of the consultation.
+   */
+  public function getStatusMessage() {
+    if ($this->isSubmissionsNowPublic()) {
+      return 'Submissions now public';
+    }
+    elseif ($this->isNotStarted()) {
+      return 'Consultation period not open';
+    }
+    elseif ($this->getDaysRemaining() <= 0) {
+      return 'Now under review';
+    }
+    else {
+      return 'Have your say';
+    }
+  }
 
-  // @phpcs:ignore
+  /**
+   * Get the progress message of the status bar.
+   */
+  public function getProgressMessage() {
+    if ($this->isSubmissionsNowPublic()) {
+      return 'Closed';
+    }
+    elseif ($this->isNotStarted()) {
+      return 'Not started';
+    }
+    else {
+      return 'In progress';
+    }
+  }
+
+
+  /**
+   * Get the status class of the consultation.
+   */
+  public function getClasses() {
+    $classes = [];
+
+    if ($this->isSubmissionsNowPublic()) {
+      $classes[] = 'cons-submissions-public';
+    }
+    elseif ($this->isSubmissionsEnabled()) {
+      $classes[] = 'cons-submissions-enabled';
+    }
+    else {
+      $classes[] = 'cons-submissions-hidden';
+    }
+
+    if ($this->isNotStarted()) {
+      $classes[] = 'cons-progress-none';
+    }
+    elseif ($this->isSubmissionsNowPublic()) {
+      $classes[] = 'cons-progress-closed';
+    }
+    elseif ($this->getDaysRemaining() <= 0) {
+      $classes[] = 'cons-progress-review';
+    }
+    else {
+      $classes[] = 'cons-progress-open';
+    }
+
+    return $classes;
+  }
+
   public function isFormHidden() {}
 
+  /**
+   * Has the consultation period started.
+   */
+  public function isNotStarted() {
+    return (bool) time() < $this->endDate->format('U');
+  }
+
   // @phpcs:ignore
-  public function isSubmissionEnabled() {}
+  public function isSubmissionsEnabled() {
+    return (bool) $this->node->field_cons_formal_subs_enabled->value;
+  }
+
+  public function isSubmissionsNowPublic() {
+    return (bool) $this->node->field_cons_formal_subs_public->value;
+  }
 
 }

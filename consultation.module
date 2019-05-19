@@ -54,14 +54,21 @@ function consultation_entity_extra_field_info() {
 
   $extra['node']['consultation']['display']['consultation_progress_bar'] = [
     'label' => t('Progress bar'),
-    'description' => t('Consultation progress bar'),
+    'description' => t('Consultation progress bar.'),
     'weight' => 0,
     'visible' => TRUE,
   ];
 
   $extra['node']['consultation']['display']['consultation_public_submissions'] = [
     'label' => t('Public submissions'),
-    'description' => t('Formal submissions marked as public'),
+    'description' => t('Formal submissions marked as public.'),
+    'weight' => 0,
+    'visible' => TRUE,
+  ];
+
+  $extra['node']['consultation']['display']['consultation_status'] = [
+    'label' => t('Consultation status'),
+    'description' => t('Text summary of the status of the consultation.'),
     'weight' => 0,
     'visible' => TRUE,
   ];
@@ -77,12 +84,10 @@ function consultation_node_view(array &$build, EntityInterface $entity, EntityVi
   if ('consultation' != $entity->bundle()) {
     return;
   }
-
+  $helper = new ConsultationNodeHelper($entity);
   $build['#attached']['library'][] = 'consultation/styles';
 
-  $helper = new ConsultationNodeHelper($entity);
   if ($display->getComponent('consultation_progress_bar')) {
-    $percent = $helper->getPercentageComplete();
     $build['consultation_progress_bar'] = [
       '#theme' => 'consultation_progress_bar',
       '#date_start' => $helper->getDateStart(),
@@ -90,18 +95,40 @@ function consultation_node_view(array &$build, EntityInterface $entity, EntityVi
       '#percentage_complete' => $helper->getPercentageComplete(),
       '#days_remain' => $helper->getDaysRemaining(),
       '#days_total' => $helper->getDaysTotal(),
-      '#status_class' => ($percent > 99) ? 'progress-complete' : '',
-      '#status_message' => $helper->getStatusMessage(),
+      '#status_message' => $helper->getProgressMessage(),
     ];
   }
 
   if ($display->getComponent('consultation_public_submissions')) {
     $build['consultation_public_submissions'] = [
       '#type' => 'markup',
-      '#markup' => 'This is my custom content B',
+      '#markup' => 'Will be the results',
     ];
   }
 
+  if ($display->getComponent('consultation_status')) {
+    $build['consultation_status'] = [
+      '#type' => 'markup',
+      '#markup' => 'Status:' . $helper->getStatusMessage(),
+    ];
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function consultation_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ('consultation' != $node->bundle()) {
+    return;
+  }
+  $helper = new ConsultationNodeHelper($node);
+
+  if (!isset($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+  $variables['attributes']['class'] += $helper->getClasses();
 }
 
 /**
