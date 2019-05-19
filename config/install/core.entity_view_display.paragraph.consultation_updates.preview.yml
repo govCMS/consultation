@@ -10,13 +10,7 @@ dependencies:
     - paragraphs.paragraphs_type.consultation_updates
   module:
     - datetime
-    - layout_builder
     - link
-third_party_settings:
-  layout_builder:
-    sections: {  }
-    allow_custom: false
-    enabled: false
 id: paragraph.consultation_updates.preview
 targetEntityType: paragraph
 bundle: consultation_updates

@@ -9,11 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.consultation_updates
   module:
     - datetime
-    - layout_builder
     - link
-third_party_settings:
-  layout_builder:
-    sections: {  }
 id: paragraph.consultation_updates.default
 targetEntityType: paragraph
 bundle: consultation_updates

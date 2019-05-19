@@ -24,7 +24,6 @@ dependencies:
     - datetime_range
     - entity_reference_revisions
     - field_group
-    - layout_builder
     - text
     - user
     - webform
@@ -106,8 +105,6 @@ third_party_settings:
         classes: 'group-formal-submissions field-group-div layout-max spacer--medium'
       label: Participate
       region: content
-  layout_builder:
-    sections: {  }
 _core:
   default_config_hash: IetnxLMjlMB9tD8kk4MGLaSFRRJgMfjC6d25REbbTws
 id: node.consultation.default

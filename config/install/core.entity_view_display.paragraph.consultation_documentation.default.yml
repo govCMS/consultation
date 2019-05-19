@@ -11,10 +11,6 @@ dependencies:
   module:
     - datetime
     - file
-    - layout_builder
-third_party_settings:
-  layout_builder:
-    sections: {  }
 id: paragraph.consultation_documentation.default
 targetEntityType: paragraph
 bundle: consultation_documentation
