@@ -114,12 +114,17 @@ bundle: consultation
 mode: default
 content:
   consultation_progress_bar:
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   consultation_public_submissions:
     weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  consultation_status:
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -134,14 +139,14 @@ content:
     type: daterange_default
     region: content
   field_cons_formal_subs_cta1:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_cons_formal_subs_cta2:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -186,7 +191,7 @@ content:
     type: text_default
     region: content
   field_cons_summary:
-    weight: 1
+    weight: 0
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -202,18 +207,13 @@ content:
     third_party_settings: {  }
     region: content
   field_cons_webform:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       source_entity: true
     third_party_settings: {  }
     type: webform_entity_reference_entity_view
     region: content
-  links:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   progress_bar:
     weight: 0
     region: content
@@ -233,3 +233,4 @@ hidden:
   field_cons_late_subs: true
   field_cons_short_comments: true
   langcode: true
+  links: true
