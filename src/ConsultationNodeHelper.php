@@ -176,16 +176,22 @@ class ConsultationNodeHelper {
     $submissions = $storage->loadMultiple($result);
     foreach ($submissions as $submission) {
       $data = $submission->getData();
-      $file = File::load($data['uploads'][0]);
-      if ($file && $file->getEntityTypeId() == 'file') {
-        $render_file = [
-          '#theme' => 'file_link',
-          '#file' => $file,
-        ];
-        $rows[] = [
-          'name' => $data['published_name'],
-          'submission' => ['data' => $render_file],
-        ];
+      if (self::isSubmissionPublic($submission)) {
+
+        $file = File::load($data['uploads'][0]);
+        if ($file && $file->getEntityTypeId() == 'file') {
+          $render_file = [
+            '#theme' => 'file_link',
+            '#file' => $file,
+          ];
+
+          // Add this public submission.
+          $rows[] = [
+            'name' => self::getSubmissionPublicName($submission),
+            'submission' => ['data' => $render_file],
+          ];
+        }
+
       }
     }
 
@@ -293,5 +299,37 @@ class ConsultationNodeHelper {
     return (bool) $this->node->field_cons_formal_subs_public->value;
   }
 
+  public static function isSubmissionFilePublic($submission) {
+    $data = $submission->getData();
+    if (self::isSubmissionPublic($submission)) {
+
+      // This check ensures that the submitter opts-in, ie. the admin must
+      // intentionally override the privacy setting of the submission.
+      if (isset($data[CONSULTATION_PRIVATE_ELEMENT]) && !$data[CONSULTATION_PRIVATE_ELEMENT]) {
+        return TRUE;
+      }
+    }
+
+    return FALSE;
+  }
+
+  public static function isSubmissionPublic($submission) {
+    $data = $submission->getData();
+    if ($data[CONSULTATION_DISPLAY_SUBMISSION_ELEMENT] == CONSULTATION_DISPLAY_SUBMISSION_ALLOWED) {
+      return TRUE;
+    }
+
+    return FALSE;
+  }
+
+  public static function getSubmissionPublicName($submission) {
+    $data = $submission->getData();
+    $element = CONSULTATION_ANONYMOUS_ELEMENT;
+    if (isset($data[$element]) && empty($data[$element])) {
+      return $data['published_name'];
+    }
+
+    return 'Anonymous';
+  }
 
 }

@@ -22,8 +22,6 @@ class ConsultationNodeHelperTest extends BrowserTestBase {
     'field_ui',
     'content_moderation',
     'datetime_range',
-    'field_layout',
-    'layout_discovery',
     'path',
     'taxonomy',
     'menu_ui',

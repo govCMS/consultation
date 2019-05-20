@@ -10,8 +10,11 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\consultation\ConsultationNodeHelper;
 use Drupal\Core\Access\AccessResult;
 
-// The webform element that captures whether the submission should remain private.
+// The webform element (checkbox) that captures whether the submission should remain private.
 define ('CONSULTATION_PRIVATE_ELEMENT', 'private');
+
+// The webform element (checkbox) that captures whether the submitter wishes to remain anonymous.
+define ('CONSULTATION_ANONYMOUS_ELEMENT', 'anonymous');
 
 // The webform element that captures whether an admin has marked the submission for display.
 define ('CONSULTATION_DISPLAY_SUBMISSION_ELEMENT', 'admin_display_approval');
@@ -190,21 +193,15 @@ function consultation_entity_access(\Drupal\Core\Entity\EntityInterface $entity,
 
   if ($entity->getEntityTypeId() == 'webform_submission') {
 
-    // This is only for the public.
     // The way webform does access checking on file downloads is to access check
-    // the submission. We never want to show the submission through this mechanism,
-    // so we add a check for the route too. (And let webform handle everything else.)
+    // the submission. We never want to show the actual full submission to the
+    // the public, just the file. So we add a check for the route that handles
+    // private files.
+    // (And let webform handle everything else.)
     if (\Drupal::currentUser()->isAnonymous() && 'system.files' == \Drupal::routeMatch()->getRouteName()) {
-
-      $data = $entity->getData();
-      if ($data[CONSULTATION_DISPLAY_SUBMISSION_ELEMENT] == CONSULTATION_DISPLAY_SUBMISSION_ALLOWED) {
-
-        // Extra check that ensures the admin must intentionally unmark the submission as 'prviate'.
-        if (isset($data[CONSULTATION_PRIVATE_ELEMENT]) && !$data[CONSULTATION_PRIVATE_ELEMENT]) {
-          return AccessResult::allowed();
-        }
+      if (ConsultationNodeHelper::isSubmissionFilePublic($entity)) {
+        return AccessResult::allowed();
       }
-
     }
   }
 
