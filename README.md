@@ -5,25 +5,31 @@ AKA: Have your say
 ## Status
 
 This module is originally developed by Dept Communications DOCA)
-and is roadmapped for the D8 GovCMS distribution. Being updated
-courtesy of the Aust Communications Media Authority (ACMA).
+and is roadmapped for the D8 GovCMS distribution. Updated
+courtesy of the Aust Communications Media Authority (ACMA), Cordelta
+and Lil Engine.
 
-There are outstanding issues and TODOs  with it:
+## Upgrade from Drupal 7
 
-1. Currently *not fit* for private submissions.
+There is currently no Drupal 7 to 8 upgrade process. It should be
+feasible to do with a migration. The field names have changed
+but are modelled on the Drupal 7 version. 
 
-2. Conflicts with field_group beta1 that GovCMS has, works
-with latest dev version.
+## Setup
 
-3. Very cursory theming treatment to match the d7 published version
-of the module and DOCAs visual theming. That means you would
-need to theme it for your own site.
+1. After installing, clone the template submission webform
+at /admin/structure/webform/manage/consultation_default/duplicate
 
-4. D7 was able to generate "public submissions" with views, but in 
-D8 the this feature moved to webform_views. Currently there
-is a fairly rough block plugin to do the same thing, but
-one would argue that it should be a view, so left rough.
+2. For convenience, Set this new form on webform field as the
+default webform at /admin/structure/types/manage/consultation/fields/node.consultation.field_cons_webform
 
-5. There are some features not covered yet but generally the node
-and webform structure is all in place.
+## Sensitive submissions
+
+Webform defaults to having private file submissions. When a submission is made
+public, you should set "Approved for display" on the submission, and ensure
+that "Remain Private" is not checked.
+
+With these values set, the module will allow private submitted files to
+be downloaded by anonymous users. It does not allow access to the submission itself.
+
 
