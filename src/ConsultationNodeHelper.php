@@ -4,6 +4,7 @@ namespace Drupal\consultation;
 
 use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
+use Drupal\Core\FileTransfer\FileTransfer;
 
 /**
  * Provides logic functions for consultation node type.
@@ -144,9 +145,10 @@ class ConsultationNodeHelper {
   // @phpcs:ignore
   public function getLateSubmissionUrl() {}
 
-  public function getWebformId() {
+
+  public function getWebform() {
     if (!$this->node->field_cons_webform->isEmpty()) {
-      return $this->node->field_cons_webform->first()->entity->id();
+      return $this->node->field_cons_webform->first()->entity;
     }
   }
 
@@ -155,7 +157,8 @@ class ConsultationNodeHelper {
       return FALSE;
     }
 
-    $webform_id = $this->getWebformId();
+    $webform = $this->getWebform();
+    $webform_id = $webform->id();
     $output = [];
 
     // @todo inject t.
@@ -173,12 +176,17 @@ class ConsultationNodeHelper {
     $submissions = $storage->loadMultiple($result);
     foreach ($submissions as $submission) {
       $data = $submission->getData();
-      //var_dump($data); die();
       $file = File::load($data['uploads'][0]);
-      $rows[] = [
-        'name' => $data['published_name'],
-        'submission' => $file->getFileUri(),
-      ];
+      if ($file && $file->getEntityTypeId() == 'file') {
+        $render_file = [
+          '#theme' => 'file_link',
+          '#file' => $file,
+        ];
+        $rows[] = [
+          'name' => $data['published_name'],
+          'submission' => ['data' => $render_file],
+        ];
+      }
     }
 
     $output['table'] = [
@@ -224,11 +232,9 @@ class ConsultationNodeHelper {
       return 'Closed';
     }
     else {
-      die('x');
       return 'In progress';
     }
   }
-
 
   /**
    * Get the status class of the consultation.
