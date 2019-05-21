@@ -113,15 +113,18 @@ function consultation_node_view(array &$build, EntityInterface $entity, EntityVi
   }
 
   if ($display->getComponent('consultation_public_submissions')) {
-    $submissions = $helper->getPublicSubmissionsDisplay();
-
-    $build['consultation_public_submissions'] = $submissions;
+    $build['consultation_public_submissions'] = FALSE;
+    if ($helper->isSubmissionsNowPublic()) {
+      $submissions = $helper->getPublicSubmissionsDisplay();
+      $build['consultation_public_submissions'] = $submissions;
+    }
   }
 
   if ($display->getComponent('consultation_status')) {
     $build['consultation_status'] = [
       '#type' => 'markup',
       // Have not figured out how to make the label configurable with hook_entity_extra_field_info().
+      // @todo do this as a render array.
       '#markup' => '
         <div class="field field--consultation-status field--type-textfield field--label-inline">
           <div class="field__label">Status:</div>

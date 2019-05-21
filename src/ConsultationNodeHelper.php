@@ -109,14 +109,16 @@ class ConsultationNodeHelper {
    *   The number of days or 0 if it's ended.
    */
   public function getDaysRemaining() {
-    if ($this->isNotStarted()) {
+    if ((time() < $this->startDate->format('U'))) {
       return $this->getDaysTotal();
     }
-    elseif ($this->isFinished()) {
+    $days = (time() - $this->getDateStart('U')) / 86400;
+
+    if ($days < 0) {
       return 0;
     }
     else {
-      return (time() - $this->getDateStart('U')) / 86400;
+      return $days;
     }
   }
 
@@ -153,7 +155,7 @@ class ConsultationNodeHelper {
   }
 
   public function getPublicSubmissionsDisplay() {
-    if (FALSE || $this->isSubmissionsNowPublic()) {
+    if (!$this->isSubmissionsNowPublic()) {
       return FALSE;
     }
 
@@ -176,7 +178,7 @@ class ConsultationNodeHelper {
     $submissions = $storage->loadMultiple($result);
     foreach ($submissions as $submission) {
       $data = $submission->getData();
-      if (self::isSubmissionPublic($submission)) {
+      if (isset($data['uploads'][0]) && self::isSubmissionPublic($submission)) {
 
         $file = File::load($data['uploads'][0]);
         if ($file && $file->getEntityTypeId() == 'file') {
