@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: FWcfJwOPotRDXailXN5Ox7lyVhcZ1NXhxX9nqvmcmcI
+  default_config_hash: a4HJsjXXzckRSKPH5CFcxCqUmSiOLFZAWlZIsM6RJoU
 id: node.consultation.field_cons_formal_subs_cta2
 field_name: field_cons_formal_subs_cta2
 entity_type: node

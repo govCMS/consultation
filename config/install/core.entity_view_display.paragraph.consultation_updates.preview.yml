@@ -13,7 +13,7 @@ dependencies:
     - datetime
     - link
 _core:
-  default_config_hash: kmdgYehY3g3LBzuHWfzGXmdYV870RavtlT-RWTHwhe0
+  default_config_hash: _2Q0xmifJItmotwJOvjY5jAf-SqseZuvESiKAUW_1VE
 id: paragraph.consultation_updates.preview
 targetEntityType: paragraph
 bundle: consultation_updates

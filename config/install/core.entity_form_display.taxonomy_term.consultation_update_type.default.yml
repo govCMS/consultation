@@ -6,11 +6,17 @@ dependencies:
     - field.field.taxonomy_term.consultation_update_type.field_cons_update_type_icon
     - taxonomy.vocabulary.consultation_update_type
   module:
+    - field_layout
     - file
+    - layout_discovery
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
-  default_config_hash: bxxYpt46YY1dqp_XbEFV8T7D1nniu6M2zMDNzNbq6MQ
+  default_config_hash: pcPTFVgBrLFKoCFD-E-zqYB_-GuqXu5lI7_r1Gh5Wig
 id: taxonomy_term.consultation_update_type.default
 targetEntityType: taxonomy_term
 bundle: consultation_update_type

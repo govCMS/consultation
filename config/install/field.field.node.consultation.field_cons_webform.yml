@@ -5,11 +5,10 @@ dependencies:
   config:
     - field.storage.node.field_cons_webform
     - node.type.consultation
-    - webform.webform.consultations_submissions_templa
   module:
     - webform
 _core:
-  default_config_hash: xiYj4BFzPFHda5dHn7RTp_RJ2YTTx9lTaNd5d7tL-Og
+  default_config_hash: O3je4U6dD7UVvQ0EUJAcQ1DNfbjtrQcNm6aa-dVc5Ok
 id: node.consultation.field_cons_webform
 field_name: field_cons_webform
 entity_type: node
@@ -31,8 +30,4 @@ settings:
   handler_settings:
     target_bundles: null
     auto_create: false
-  default_data: ''
-  status: open
-  open: ''
-  close: ''
 field_type: webform

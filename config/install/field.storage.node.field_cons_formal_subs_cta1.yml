@@ -6,7 +6,7 @@ dependencies:
     - node
     - text
 _core:
-  default_config_hash: bqFbJ1q6j4_-3sdhDJWBUfWQDwYvq1ty31h1SXyR3Ls
+  default_config_hash: TZnGRWiHfsUyE_Qj5f01C_U0xR3nnJimj-ax0i-U8Vk
 id: node.field_cons_formal_subs_cta1
 field_name: field_cons_formal_subs_cta1
 entity_type: node

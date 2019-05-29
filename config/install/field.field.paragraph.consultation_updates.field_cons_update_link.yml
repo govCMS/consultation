@@ -8,7 +8,7 @@ dependencies:
   module:
     - link
 _core:
-  default_config_hash: ZHIuudT1tJLrzRU7gP-7AVA8Ga7np2Jbf8Ar06vxTCU
+  default_config_hash: e6_iF96WduArz7r9XcpZoCyuT9ME53NOgMSEv8AZ1EE
 id: paragraph.consultation_updates.field_cons_update_link
 field_name: field_cons_update_link
 entity_type: paragraph

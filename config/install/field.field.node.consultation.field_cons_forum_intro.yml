@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: wbvA2ci6-kwcaSkT6CtfvTsDDn5p-VO3Rwrf0SSCUH0
+  default_config_hash: 7Zaz1UbrGT5aKclPuGZPlBAHpCpEOqColebmJEJv8P8
 id: node.consultation.field_cons_forum_intro
 field_name: field_cons_forum_intro
 entity_type: node

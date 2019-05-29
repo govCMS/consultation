@@ -5,14 +5,10 @@ core: 8.x
 package: GovCMS
 configure: consultation.settings
 dependencies:
-  - drupal:comment
   - drupal:datetime_range
   - drupal:entity_reference_revisions
   - drupal:field_group
-  - drupal:language
-  - drupal:menu_ui
   - drupal:node
   - drupal:paragraphs
-  - drupal:path
   - drupal:taxonomy
   - drupal:webform

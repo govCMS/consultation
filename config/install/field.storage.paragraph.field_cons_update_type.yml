@@ -6,7 +6,7 @@ dependencies:
     - paragraphs
     - taxonomy
 _core:
-  default_config_hash: A5DcXYDBbR1pmalynEklnkJGLzKl3UgBw-I2yesQ1R4
+  default_config_hash: 2diScPr6dAZlwiatmFfXFyptreATgPc2bfoQnFjts-A
 id: paragraph.field_cons_update_type
 field_name: field_cons_update_type
 entity_type: paragraph

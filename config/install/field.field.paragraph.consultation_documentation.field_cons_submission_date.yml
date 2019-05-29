@@ -8,7 +8,7 @@ dependencies:
   module:
     - datetime
 _core:
-  default_config_hash: QRpzm2-BblcOhRIL8wnNonsbmiwJFlVxOgWmAaDQ7u8
+  default_config_hash: wqygR4t3WOFIgZ9uzVckPRQ6m8EitRtOVMYiGfIg6Wo
 id: paragraph.consultation_documentation.field_cons_submission_date
 field_name: field_cons_submission_date
 entity_type: paragraph

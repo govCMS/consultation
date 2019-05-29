@@ -9,7 +9,7 @@ dependencies:
     - file
     - text
 _core:
-  default_config_hash: 84kp3Y5_Gs2zfTNiNXxJfLJRb-TwzxqPZ2GanZoARCE
+  default_config_hash: nFHCXWgrCW2rVDkc7YwgU5ByFzCwMyyyQZ0BjyEDkrk
 id: taxonomy_term.consultation_update_type.default
 targetEntityType: taxonomy_term
 bundle: consultation_update_type

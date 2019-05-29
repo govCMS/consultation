@@ -8,7 +8,7 @@ dependencies:
   module:
     - datetime
 _core:
-  default_config_hash: TI9ztvFlzLzG2SMCzstEHbQl6vXSQ6BI8ne_7dvoBQw
+  default_config_hash: JzRO9cFyHl3flOrbK9mohEdeorfck6V3NydS8hF_HjM
 id: paragraph.consultation_updates.field_cons_update_date
 field_name: field_cons_update_date
 entity_type: paragraph

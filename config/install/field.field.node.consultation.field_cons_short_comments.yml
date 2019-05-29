@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_cons_short_comments
     - node.type.consultation
 _core:
-  default_config_hash: 4art3cAZ_6jvnbDGXXVYmOp1-0_CVHpU05-t-280W30
+  default_config_hash: ZK7ifEKGT5DTMWVFaocH7N1L46I95XxbykB4PVrmAqo
 id: node.consultation.field_cons_short_comments
 field_name: field_cons_short_comments
 entity_type: node

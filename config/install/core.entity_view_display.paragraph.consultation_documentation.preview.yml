@@ -14,7 +14,7 @@ dependencies:
     - datetime
     - file
 _core:
-  default_config_hash: 1eCK3PiKn-ZAuNSdkdNeaqjroJBJQN3rOTs5Ov2pZVU
+  default_config_hash: dA9kAUbTuAY4UxuZzpQQcGneDhSGlk9mIM6Gvvt6jko
 id: paragraph.consultation_documentation.preview
 targetEntityType: paragraph
 bundle: consultation_documentation
