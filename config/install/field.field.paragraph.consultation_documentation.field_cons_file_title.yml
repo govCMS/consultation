@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_cons_file_title
     - paragraphs.paragraphs_type.consultation_documentation
 _core:
-  default_config_hash: 5OoUX1PFtqFzEYw6pZ47PuxQE_szneX8t2pMI0mGEJA
+  default_config_hash: Sx9UMZVv_A6awBA3lgovMr3y_QxMThWLOKhdih9VoRM
 id: paragraph.consultation_documentation.field_cons_file_title
 field_name: field_cons_file_title
 entity_type: paragraph

@@ -26,7 +26,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: yGyQbzmgwPwsOSkvrfSOnUjfVO1WMm3EP83KqOfkOzg
+  default_config_hash: KWQexuuuMPfW_B24vXkbmj8hzkyIWN-aQIEu1-U3vpk
 id: node.consultation.teaser
 targetEntityType: node
 bundle: consultation

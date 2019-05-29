@@ -141,7 +141,7 @@ third_party_settings:
       label: 'Informal discussions'
       region: content
 _core:
-  default_config_hash: Mliufq-hiRyJRdDUBFsZIDzWR-VSpm7PbPV1Nf-3xqQ
+  default_config_hash: 8h_fPi-cEMdU57iDwJkqscRqiUFrw51ZAAtzHPSbgpo
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation

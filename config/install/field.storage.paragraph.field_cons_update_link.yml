@@ -6,7 +6,7 @@ dependencies:
     - link
     - paragraphs
 _core:
-  default_config_hash: jQshw-qmcrK78x2aMl6Ovv4U8LJr58lBDlPws_ZiGz4
+  default_config_hash: WSBUPFJ_Omynwb-37tckau9vS9HGdNUaMGsZ3DPWbuE
 id: paragraph.field_cons_update_link
 field_name: field_cons_update_link
 entity_type: paragraph

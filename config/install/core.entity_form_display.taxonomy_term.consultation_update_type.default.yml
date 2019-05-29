@@ -10,7 +10,7 @@ dependencies:
     - path
     - text
 _core:
-  default_config_hash: m1gZyy_gF_PswHKBPwDlQPwAWRG05euOM5ggqz0UyhU
+  default_config_hash: vJLEn0A1xPg1XQRe030azCuX8hPqRAJIqHT0t8ap9MU
 id: taxonomy_term.consultation_update_type.default
 targetEntityType: taxonomy_term
 bundle: consultation_update_type

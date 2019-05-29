@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: 4jaHSU9YxnrbZiy-1Go3cwBGaWaQmA-3a_tS3bO60UY
+  default_config_hash: zUwKEJRRJVLyaRbKdg-_Zu1-9VJVc20xmkR2-9o8Buw
 id: consultation_documentation
 label: 'Consultations: Issue documentation'
 icon_uuid: null

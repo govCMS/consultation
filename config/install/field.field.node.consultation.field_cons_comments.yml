@@ -8,7 +8,7 @@ dependencies:
   module:
     - comment
 _core:
-  default_config_hash: Lkxl4j3lALba8JoKAhGRf6BQDuXlHMC5Y-E2S0D_py0
+  default_config_hash: sBPWgmUHlYXtKud86lc5tBJMYzCaAsGrZed3TvuPonE
 id: node.consultation.field_cons_comments
 field_name: field_cons_comments
 entity_type: node

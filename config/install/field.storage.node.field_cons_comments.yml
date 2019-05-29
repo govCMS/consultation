@@ -6,7 +6,7 @@ dependencies:
     - comment
     - node
 _core:
-  default_config_hash: iXQ8skz4mp164xVfGvt74gbSWqX7mcqt39zh4w5HBCA
+  default_config_hash: RH0DEGMbCEYFrOGRxOxj3vQBwsMpMGnVffBrLo6FQa8
 id: node.field_cons_comments
 field_name: field_cons_comments
 entity_type: node

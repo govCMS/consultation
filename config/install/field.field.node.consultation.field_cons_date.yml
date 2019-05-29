@@ -8,7 +8,7 @@ dependencies:
   module:
     - datetime_range
 _core:
-  default_config_hash: Yh7Nfy7K1NB0zPbjZcu4S6S5_yVJXYakhXjIAWA_YNE
+  default_config_hash: L951tLrjJcR6sSKFzWW5h6J19rPoERLSKAddQhHgjzU
 id: node.consultation.field_cons_date
 field_name: field_cons_date
 entity_type: node

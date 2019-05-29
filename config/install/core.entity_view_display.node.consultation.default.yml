@@ -107,7 +107,7 @@ third_party_settings:
       label: Participate
       region: content
 _core:
-  default_config_hash: 6wJUYM--9iTgC3V-AVTxPyubfCCWXa2Uun_kozScDGU
+  default_config_hash: 3C7WZOOJL-houEgaudA8VYy4ztoCFo75D1Fu_fm4y6E
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation

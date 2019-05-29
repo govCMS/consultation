@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies: {  }
 _core:
-  default_config_hash: PqVd_KfPtDpm1A400SfTU39AdeKfD45IASsZB95f49w
+  default_config_hash: _J9QsNzSU6BUhv_j5JYmCeXtR80DRCeVLpzyI9GDv5o
 name: 'Consultations: Update type'
 vid: consultation_update_type
 description: ''

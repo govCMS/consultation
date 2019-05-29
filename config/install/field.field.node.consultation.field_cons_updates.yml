@@ -9,7 +9,7 @@ dependencies:
   module:
     - entity_reference_revisions
 _core:
-  default_config_hash: AKRSMMF0UW-XFUT9EO32fPUXjiZqW1dCzeaCi5MgbMA
+  default_config_hash: nDWAcWs9loFxSDogY9D7M4qbE1bWO5emDKccVOrFbB0
 id: node.consultation.field_cons_updates
 field_name: field_cons_updates
 entity_type: node
