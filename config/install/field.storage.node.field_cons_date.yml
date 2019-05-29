@@ -6,7 +6,7 @@ dependencies:
     - datetime_range
     - node
 _core:
-  default_config_hash: palUcXUc0IzH_xCY3mmwuy7bJY76e4DeL5QqPanzryY
+  default_config_hash: khMkFIv-NEfPuVDLMbr7bXMrfRUculqkgy_VzXjkeH0
 id: node.field_cons_date
 field_name: field_cons_date
 entity_type: node

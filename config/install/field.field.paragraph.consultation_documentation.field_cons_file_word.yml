@@ -8,7 +8,7 @@ dependencies:
   module:
     - file
 _core:
-  default_config_hash: RiQ9ULjMwPKKnJuxDDDt5gbMG_lKuXlKQLAiOTe4Vr8
+  default_config_hash: fF4Lw-YhqpNSE2hGgfbego_ZIfKYbESWPd6076FFTtw
 id: paragraph.consultation_documentation.field_cons_file_word
 field_name: field_cons_file_word
 entity_type: paragraph

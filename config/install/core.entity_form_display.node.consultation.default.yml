@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.consultation.field_cons_comments
     - field.field.node.consultation.field_cons_date
+    - field.field.node.consultation.field_cons_file_uploads
     - field.field.node.consultation.field_cons_formal_subs_cta1
     - field.field.node.consultation.field_cons_formal_subs_cta2
     - field.field.node.consultation.field_cons_formal_subs_enabled
@@ -22,11 +23,8 @@ dependencies:
     - field.field.node.consultation.field_cons_webform
     - node.type.consultation
   module:
-    - content_moderation
     - datetime_range
     - field_group
-    - field_layout
-    - layout_discovery
     - paragraphs
     - path
     - text
@@ -142,11 +140,8 @@ third_party_settings:
         classes: ''
       label: 'Informal discussions'
       region: content
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 _core:
-  default_config_hash: YJVJx_SGgewFgRf_IrnQ8RL9BpVy3VofaDnuTvIQgjQ
+  default_config_hash: ra0js1t_5SVd6KgE-JL2036uwzDkaR9T5hJS8NIq9t4
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation
@@ -365,3 +360,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_cons_comments: true
+  field_cons_file_uploads: true

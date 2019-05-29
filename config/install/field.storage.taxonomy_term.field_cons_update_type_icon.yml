@@ -6,7 +6,7 @@ dependencies:
     - file
     - taxonomy
 _core:
-  default_config_hash: OVW_2hrpUvGNkifPrrxipY7BkdHvKrD7OsWCzCEtPMI
+  default_config_hash: SrybhrqtU7piYs7H1lkxtk2GB7I03G81fQ2iHWuaHIk
 id: taxonomy_term.field_cons_update_type_icon
 field_name: field_cons_update_type_icon
 entity_type: taxonomy_term

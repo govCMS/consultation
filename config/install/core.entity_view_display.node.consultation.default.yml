@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.consultation.field_cons_comments
     - field.field.node.consultation.field_cons_date
+    - field.field.node.consultation.field_cons_file_uploads
     - field.field.node.consultation.field_cons_formal_subs_cta1
     - field.field.node.consultation.field_cons_formal_subs_cta2
     - field.field.node.consultation.field_cons_formal_subs_enabled
@@ -106,7 +107,7 @@ third_party_settings:
       label: Participate
       region: content
 _core:
-  default_config_hash: B0h934yFMbSfIkOZAzZSxPNjn1YgndR4sYLL0WW5t24
+  default_config_hash: 1PSUGNSDG-WwDPcrNC5UqZPPBw2Bt82v2JJ4kMIC-VU
 id: node.consultation.default
 targetEntityType: node
 bundle: consultation
@@ -225,6 +226,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_cons_comments: true
+  field_cons_file_uploads: true
   field_cons_formal_subs_enabled: true
   field_cons_formal_subs_notify: true
   field_cons_formal_subs_public: true

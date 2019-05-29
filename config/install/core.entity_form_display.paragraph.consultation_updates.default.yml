@@ -10,15 +10,9 @@ dependencies:
     - paragraphs.paragraphs_type.consultation_updates
   module:
     - datetime
-    - field_layout
-    - layout_discovery
     - link
-third_party_settings:
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 _core:
-  default_config_hash: WlYh15GtJwjMDfkeQBRSparfKVT47jrgmzz-2sqOPEI
+  default_config_hash: mdiGgvioneKUib45a8xOfbXKe3RIeNtku7kjMiJO2Cg
 id: paragraph.consultation_updates.default
 targetEntityType: paragraph
 bundle: consultation_updates

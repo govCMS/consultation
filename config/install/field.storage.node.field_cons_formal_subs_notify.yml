@@ -5,7 +5,7 @@ dependencies:
   module:
     - node
 _core:
-  default_config_hash: HqbnxVtVHaO_FLzh1DmDBJiwRJMZre-scM2ShPKa6kw
+  default_config_hash: SBmFasULchNxq-dksstCTp4rubSnk2PV2b5W6QUH8_U
 id: node.field_cons_formal_subs_notify
 field_name: field_cons_formal_subs_notify
 entity_type: node

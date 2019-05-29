@@ -10,7 +10,7 @@ third_party_settings:
       - main
     parent: 'main:'
 _core:
-  default_config_hash: Z99CzudSdPzmIW-zp7vz1Bavpj0TOjkRe_sNmd8n38M
+  default_config_hash: hopzDjdglX2-556r7RJSduNuXFe3ANz8-UoZ5DSEz8k
 name: Consultation
 type: consultation
 description: 'Consultations are to engage with the general public on a given topic and incorporate the Have Your Say functionality.'

@@ -8,7 +8,7 @@ dependencies:
   module:
     - text
 _core:
-  default_config_hash: ScNz4vb_YYdCH07HJNBPTo8JBFcGG9XZpBHENIxEUBI
+  default_config_hash: JElSpiHvwkrDgsyB_HMIApLv0ynugNQLKjURGzTukkU
 id: node.consultation.field_cons_summary
 field_name: field_cons_summary
 entity_type: node

@@ -8,7 +8,7 @@ dependencies:
   module:
     - file
 _core:
-  default_config_hash: ALR8F7puSOO857zmmnOq1FNXAxDKttpZ8_PjYIHbpoQ
+  default_config_hash: VC7GoJryJ2ElLvOCq5hoqpGSwL8zfnJ6YRWkMwNLiaw
 id: taxonomy_term.consultation_update_type.field_cons_update_type_icon
 field_name: field_cons_update_type_icon
 entity_type: taxonomy_term

@@ -6,7 +6,7 @@ dependencies:
     - datetime
     - paragraphs
 _core:
-  default_config_hash: jxEhwkZjxVa2UcgYAptVkARB6kkZ69Fz8c1KC1RTHws
+  default_config_hash: ZCZ7fNSRmL2u1H2JPxKbZah6L_zkVvbyaO3RUH5IUAc
 id: paragraph.field_cons_submission_date
 field_name: field_cons_submission_date
 entity_type: paragraph

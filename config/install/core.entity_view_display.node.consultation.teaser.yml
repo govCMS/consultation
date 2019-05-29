@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.consultation.field_cons_comments
     - field.field.node.consultation.field_cons_date
+    - field.field.node.consultation.field_cons_file_uploads
     - field.field.node.consultation.field_cons_formal_subs_cta1
     - field.field.node.consultation.field_cons_formal_subs_cta2
     - field.field.node.consultation.field_cons_formal_subs_enabled
@@ -25,7 +26,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: abyhiF4mTLjEbvbw8pBdiH-yDssc5P5hqqKFZuH8AXk
+  default_config_hash: DeRlMlFrO-0FfIMep2pb5KH_srlOzwXPaH0PYTpN_tU
 id: node.consultation.teaser
 targetEntityType: node
 bundle: consultation
@@ -54,6 +55,7 @@ content:
 hidden:
   field_cons_comments: true
   field_cons_date: true
+  field_cons_file_uploads: true
   field_cons_formal_subs_cta1: true
   field_cons_formal_subs_cta2: true
   field_cons_formal_subs_enabled: true

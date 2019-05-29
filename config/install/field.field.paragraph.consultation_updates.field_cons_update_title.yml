@@ -6,7 +6,7 @@ dependencies:
     - field.storage.paragraph.field_cons_update_title
     - paragraphs.paragraphs_type.consultation_updates
 _core:
-  default_config_hash: 9kP04XyiOkEzUj7zs2dzoUTKa6Oe8NbLcBuZV7Uu5hU
+  default_config_hash: vI6n1LWmiuZBx2fTqClMRSFHu47WPChqr-qjTv3V3QY
 id: paragraph.consultation_updates.field_cons_update_title
 field_name: field_cons_update_title
 entity_type: paragraph
