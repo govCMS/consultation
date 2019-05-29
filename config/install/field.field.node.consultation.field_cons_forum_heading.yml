@@ -1,12 +1,9 @@
-uuid: 174d1e40-456a-4c2a-a0bd-754615c845d0
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_cons_forum_heading
     - node.type.consultation
-_core:
-  default_config_hash: O_1eAn8o8O7KOb_CyWwfKfwWIFFVJMhHYNOZU8b9ECc
 id: node.consultation.field_cons_forum_heading
 field_name: field_cons_forum_heading
 entity_type: node

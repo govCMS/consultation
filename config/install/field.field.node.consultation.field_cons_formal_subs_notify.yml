@@ -1,12 +1,9 @@
-uuid: c8e4793d-b3c8-41a1-9944-e26e89c76599
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_cons_formal_subs_notify
     - node.type.consultation
-_core:
-  default_config_hash: jpuOFZNw4BhMjJgU52f1e0VmMaZz5UTFTL7qsnCEOhU
 id: node.consultation.field_cons_formal_subs_notify
 field_name: field_cons_formal_subs_notify
 entity_type: node

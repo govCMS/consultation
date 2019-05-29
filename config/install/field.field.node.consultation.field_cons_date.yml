@@ -1,4 +1,3 @@
-uuid: 6c8a5c48-3293-4bbc-a22f-ad0db95847cb
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.consultation
   module:
     - datetime_range
-_core:
-  default_config_hash: L951tLrjJcR6sSKFzWW5h6J19rPoERLSKAddQhHgjzU
 id: node.consultation.field_cons_date
 field_name: field_cons_date
 entity_type: node

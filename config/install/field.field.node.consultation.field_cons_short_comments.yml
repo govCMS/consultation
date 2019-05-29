@@ -1,12 +1,9 @@
-uuid: 7d0049c9-779b-4bac-9349-d81d72301d6b
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_cons_short_comments
     - node.type.consultation
-_core:
-  default_config_hash: ADcMhjLMmE4Nt50QUwPdtPT2DKU45MToIAqD0RcbByE
 id: node.consultation.field_cons_short_comments
 field_name: field_cons_short_comments
 entity_type: node

@@ -1,11 +1,8 @@
-uuid: 66f84647-0262-4789-907a-d69df893fe40
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: CQ759Xh7uj8fiBCxWB8uaoZIOCIk9mWZryIvS_22Ayo
 id: node.field_cons_short_comments
 field_name: field_cons_short_comments
 entity_type: node

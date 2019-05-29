@@ -1,12 +1,9 @@
-uuid: 5dd378ba-8510-45b1-8025-aaccaab49a22
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_cons_formal_subs_public
     - node.type.consultation
-_core:
-  default_config_hash: iMvcu0zZ363zk1h4k3Ks_TPpb3cgkUdCAFQ_lGGZy_I
 id: node.consultation.field_cons_formal_subs_public
 field_name: field_cons_formal_subs_public
 entity_type: node

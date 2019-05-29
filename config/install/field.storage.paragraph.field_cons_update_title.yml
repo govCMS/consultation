@@ -1,11 +1,8 @@
-uuid: cb55a725-bfb0-4b2e-b50e-b73b026dc5bf
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-_core:
-  default_config_hash: dPmvGFC-yX-4J2bwsd1dSC2laM2g7S7YNClyXVwpBJI
 id: paragraph.field_cons_update_title
 field_name: field_cons_update_title
 entity_type: paragraph

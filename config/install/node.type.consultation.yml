@@ -1,9 +1,6 @@
-uuid: 48e08f48-57e0-4aa0-84b0-8d665deb891b
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: POGjqC4-9YGl3AYYtypU3eY52UBWeRFhqJx68KngxZ4
 name: Consultation
 type: consultation
 description: 'Consultations are to engage with the general public on a given topic and incorporate the Have Your Say functionality.'

@@ -1,12 +1,9 @@
-uuid: f6b65536-7e49-4f95-8a19-37450c118039
 langcode: en
 status: true
 dependencies:
   module:
     - node
     - text
-_core:
-  default_config_hash: LluLHPDc_FQcWOMETcKExQrc6F342qHHofc3UNZKePY
 id: node.field_cons_outcomes_text
 field_name: field_cons_outcomes_text
 entity_type: node

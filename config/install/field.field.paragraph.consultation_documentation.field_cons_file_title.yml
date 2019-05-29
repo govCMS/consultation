@@ -1,12 +1,9 @@
-uuid: becacf12-04c5-4df4-a11c-429976b5eda0
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_cons_file_title
     - paragraphs.paragraphs_type.consultation_documentation
-_core:
-  default_config_hash: Sx9UMZVv_A6awBA3lgovMr3y_QxMThWLOKhdih9VoRM
 id: paragraph.consultation_documentation.field_cons_file_title
 field_name: field_cons_file_title
 entity_type: paragraph

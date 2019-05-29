@@ -1,11 +1,8 @@
-uuid: 732e034f-9c31-4833-bbeb-3a506bcb456c
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: 40C07sa5Hyby8nqWZ5L9ILFiC46VK6t9Bc1lqxTVFH4
 id: node.field_cons_formal_subs_notify
 field_name: field_cons_formal_subs_notify
 entity_type: node

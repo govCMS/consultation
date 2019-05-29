@@ -1,4 +1,3 @@
-uuid: aa5ff588-6b03-4f12-b489-46189a26727b
 langcode: en
 status: true
 dependencies:
@@ -25,8 +24,6 @@ dependencies:
     - node.type.consultation
   module:
     - user
-_core:
-  default_config_hash: KWQexuuuMPfW_B24vXkbmj8hzkyIWN-aQIEu1-U3vpk
 id: node.consultation.teaser
 targetEntityType: node
 bundle: consultation

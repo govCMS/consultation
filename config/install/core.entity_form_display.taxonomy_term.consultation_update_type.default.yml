@@ -1,4 +1,3 @@
-uuid: ffecb705-0369-4d5b-9681-9c9f9b717770
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ dependencies:
     - file
     - path
     - text
-_core:
-  default_config_hash: vJLEn0A1xPg1XQRe030azCuX8hPqRAJIqHT0t8ap9MU
 id: taxonomy_term.consultation_update_type.default
 targetEntityType: taxonomy_term
 bundle: consultation_update_type

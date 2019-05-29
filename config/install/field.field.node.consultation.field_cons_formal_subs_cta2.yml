@@ -1,4 +1,3 @@
-uuid: 8e51fed8-bd02-4d07-abc6-fed97f359984
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.consultation
   module:
     - text
-_core:
-  default_config_hash: gjZm2gjbBRSqH93Ld-c0OlwZk0a8j4MRWiPuKAbGaCk
 id: node.consultation.field_cons_formal_subs_cta2
 field_name: field_cons_formal_subs_cta2
 entity_type: node

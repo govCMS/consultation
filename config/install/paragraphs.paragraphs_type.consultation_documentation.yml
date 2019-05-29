@@ -1,9 +1,6 @@
-uuid: ab594354-0302-4c3e-bd95-34f03eedd900
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: zUwKEJRRJVLyaRbKdg-_Zu1-9VJVc20xmkR2-9o8Buw
 id: consultation_documentation
 label: 'Consultations: Issue documentation'
 icon_uuid: null

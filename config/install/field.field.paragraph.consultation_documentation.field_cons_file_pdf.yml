@@ -1,4 +1,3 @@
-uuid: fd466ee7-f5d1-43a3-8f82-5bc2f10c3705
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - paragraphs.paragraphs_type.consultation_documentation
   module:
     - file
-_core:
-  default_config_hash: aSlIFJJLNeiIJhHp0N2EYDAaiWHuUfycVC5m1jsdNU0
 id: paragraph.consultation_documentation.field_cons_file_pdf
 field_name: field_cons_file_pdf
 entity_type: paragraph

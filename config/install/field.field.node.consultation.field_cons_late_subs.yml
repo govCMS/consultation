@@ -1,12 +1,9 @@
-uuid: c8413ec9-ae8f-4405-9a9c-89c3abca990a
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_cons_late_subs
     - node.type.consultation
-_core:
-  default_config_hash: QHtPFAYhsznrbshZfxflcAg9bIR07j59fm7wWEMS28Q
 id: node.consultation.field_cons_late_subs
 field_name: field_cons_late_subs
 entity_type: node

@@ -1,12 +1,9 @@
-uuid: ff113806-1c8e-4de8-8395-916f1963a55f
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_cons_file_description
     - paragraphs.paragraphs_type.consultation_documentation
-_core:
-  default_config_hash: VwhjDWeFcNLneQBWM3SnNWIFPnKfbF-CoLPJEv11NGE
 id: paragraph.consultation_documentation.field_cons_file_description
 field_name: field_cons_file_description
 entity_type: paragraph

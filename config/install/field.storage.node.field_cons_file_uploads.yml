@@ -1,11 +1,8 @@
-uuid: 6a178c53-6dae-453f-a7fc-39ea774e7900
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: 3xBuvmnl7_C1vIC7Dpfmv5OybW3Y1aVtcKhhmbjadz4
 id: node.field_cons_file_uploads
 field_name: field_cons_file_uploads
 entity_type: node

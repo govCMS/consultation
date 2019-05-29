@@ -1,4 +1,3 @@
-uuid: d998dcea-4e79-44b6-8ab9-0fb795258da0
 langcode: en
 status: true
 dependencies:
@@ -12,8 +11,6 @@ dependencies:
   module:
     - datetime
     - link
-_core:
-  default_config_hash: jyUxxjwseGt2xXrTgOSDbYXgqE8xypFtH2-BWFj3GkM
 id: paragraph.consultation_updates.preview
 targetEntityType: paragraph
 bundle: consultation_updates
