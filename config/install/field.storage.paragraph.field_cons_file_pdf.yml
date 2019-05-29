@@ -6,7 +6,7 @@ dependencies:
     - file
     - paragraphs
 _core:
-  default_config_hash: Bg8_jmLGiUN9TageQvbAJV0DGToR4vegoosH0TakP0o
+  default_config_hash: 1nS9WdFrrY6NGDQuYJawlcG22CHinDpYWCLUliIMU4U
 id: paragraph.field_cons_file_pdf
 field_name: field_cons_file_pdf
 entity_type: paragraph

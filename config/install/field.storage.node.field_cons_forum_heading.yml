@@ -5,7 +5,7 @@ dependencies:
   module:
     - node
 _core:
-  default_config_hash: kiJbLPfNm9HUV6ALNDQNb_GjXlVaNHbjnRtvmANSLnQ
+  default_config_hash: u5aHWEoWTjEzzRJY_vjeAYbz7xojWuq-FDNciejvSj4
 id: node.field_cons_forum_heading
 field_name: field_cons_forum_heading
 entity_type: node

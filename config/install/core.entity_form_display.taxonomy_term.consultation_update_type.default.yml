@@ -10,7 +10,7 @@ dependencies:
     - path
     - text
 _core:
-  default_config_hash: hMKpcqPIm1J86a4u3LmBbl_H2W36izx0LStYpmBFAfk
+  default_config_hash: m1gZyy_gF_PswHKBPwDlQPwAWRG05euOM5ggqz0UyhU
 id: taxonomy_term.consultation_update_type.default
 targetEntityType: taxonomy_term
 bundle: consultation_update_type
@@ -31,13 +31,6 @@ content:
     third_party_settings: {  }
     type: file_generic
     region: content
-  langcode:
-    type: language_select
-    weight: 2
-    region: content
-    settings:
-      include_locked: true
-    third_party_settings: {  }
   name:
     type: string_textfield
     weight: -5

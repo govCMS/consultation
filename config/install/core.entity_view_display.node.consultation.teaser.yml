@@ -26,7 +26,7 @@ dependencies:
   module:
     - user
 _core:
-  default_config_hash: DeRlMlFrO-0FfIMep2pb5KH_srlOzwXPaH0PYTpN_tU
+  default_config_hash: yGyQbzmgwPwsOSkvrfSOnUjfVO1WMm3EP83KqOfkOzg
 id: node.consultation.teaser
 targetEntityType: node
 bundle: consultation
@@ -71,4 +71,3 @@ hidden:
   field_cons_summary: true
   field_cons_updates: true
   field_cons_webform: true
-  langcode: true

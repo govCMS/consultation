@@ -7,7 +7,7 @@ dependencies:
     - paragraphs.paragraphs_type.consultation_updates
     - taxonomy.vocabulary.consultation_update_type
 _core:
-  default_config_hash: B7NIxCqoZVuuaZQ8LLM9vUWH5d-Arowt5x5xb2Mpmtw
+  default_config_hash: I-y2oQzPHkNhd-xw1zvkbgcecJgANaW1o0jpSd3s6N4
 id: paragraph.consultation_updates.field_cons_update_type
 field_name: field_cons_update_type
 entity_type: paragraph

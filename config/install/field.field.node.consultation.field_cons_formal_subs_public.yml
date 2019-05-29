@@ -6,7 +6,7 @@ dependencies:
     - field.storage.node.field_cons_formal_subs_public
     - node.type.consultation
 _core:
-  default_config_hash: KBYYz-U29Tu049uMp5sF7YDAnBKOONj-KbZVMD4HIl8
+  default_config_hash: oaK9Dn0soGal2LDqDXmosu9mTn027QF-AiMtIT6LNZQ
 id: node.consultation.field_cons_formal_subs_public
 field_name: field_cons_formal_subs_public
 entity_type: node
