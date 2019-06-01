@@ -109,16 +109,18 @@ class ConsultationNodeHelper {
    *   The number of days or 0 if it's ended.
    */
   public function getDaysRemaining() {
-    if ((time() < $this->startDate->format('U'))) {
-      return $this->getDaysTotal();
-    }
-    $days = (time() - $this->getDateStart('U')) / 86400;
+    $end = $this->getDateEnd('U');
+    $start = $this->getDateStart('U');
+    $now = time();
 
-    if ($days < 0) {
+    if ($end < $now) {
       return 0;
     }
-    else {
-      return $days;
+    elseif ($start < $now && $now < $end) {
+      return ceil((time() - $start) / 86400);
+    }
+    elseif ($end < $now) {
+      return 0;
     }
   }
 
