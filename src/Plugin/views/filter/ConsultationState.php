@@ -36,7 +36,7 @@ class ConsultationState extends FilterPluginBase {
       '#tree' => TRUE,
       'state' => [
         '#type' => 'select',
-        '#title' => $this->t('Consultation state'),
+        '#title' => $this->t('Status'),
         '#options' => [
           'all' => $this->t('All'),
           'open' => $this->t('Open'),
