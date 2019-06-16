@@ -1,11 +1,7 @@
-views.filter.consultation_state:
-  type: views_filter
-  label: 'Consultation state'
-
-views.filter_value.date:
+views.filter_value.consultation_state:
   type: mapping
   label: 'Consultation state'
   mapping:
-    status:
+    state:
       type: string
-      label: 'Status'
+      label: 'Consultation state'

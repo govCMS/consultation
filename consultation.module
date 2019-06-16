@@ -214,18 +214,19 @@ function consultation_entity_access(\Drupal\Core\Entity\EntityInterface $entity,
 }
 
 /**
- * Implements hook_field_views_data_alter().
+ * Implements hook_views_data_alter().
  */
-function consultation_field_views_data_alter(array &$data, FieldStorageConfigInterface $field_storage) {
-  if ($field_storage->getType() === 'daterange') {
-    foreach ($data as $field_name => $field) {
-      foreach ($field as $key => $item) {
-        if (substr($key, -10) !== '_end_value') {
-          if (isset($item['filter'])) {
-            $data[$field_name][$key]['filter']['id'] = 'consultation_state';
-          }
-        }
-      }
-    }
-  }
+function consultation_views_data_alter(array &$data) {
+
+  $data['node__field_cons_date']['consultation_status'] = [
+    'title' => t('Consultation state'),
+    'filter' => [
+      'title' => t('Consultation state'),
+      'group' => t('Content'),
+      'help' => t('Uses the date range to filter by open/closed/upcoming.'),
+      'field' => 'field_cons_date_value',
+      'id' => 'consultation_state',
+    ],
+  ];
+
 }

@@ -34,16 +34,16 @@ class ConsultationState extends FilterPluginBase {
   protected function valueForm(&$form, FormStateInterface $form_state) {
     $form['value'] = [
       '#tree' => TRUE,
-      'status' => [
+      'state' => [
         '#type' => 'select',
-        '#title' => $this->t('Consultation status'),
+        '#title' => $this->t('Consultation state'),
         '#options' => [
           'all' => $this->t('All'),
           'open' => $this->t('Open'),
           'closed' => $this->t('Closed'),
           'upcoming' => $this->t('Upcoming'),
         ],
-        '#default_value' => !empty($this->value['status']) ? $this->value['status'] : 'all',
+        '#default_value' => !empty($this->value['state']) ? $this->value['state'] : 'all',
       ]
     ];
   }
@@ -61,7 +61,7 @@ class ConsultationState extends FilterPluginBase {
     $date_end = $this->query->getDateFormat($this->query->getDateField($end_field_name, TRUE), 'Y-m-d H:i:s', FALSE);
     $date_now = $this->query->getDateFormat('FROM_UNIXTIME(***CURRENT_TIME***)', 'Y-m-d H:i:s', FALSE);
 
-    switch ($this->value['status']) {
+    switch ($this->value['state']) {
       case 'open':
         $this->query->addWhereExpression($this->options['group'], "$date_now BETWEEN $date_start AND $date_end");
         break;
@@ -80,14 +80,15 @@ class ConsultationState extends FilterPluginBase {
    * Admin summary.
    */
   public function adminSummary() {
+
     if ($this->isAGroup()) {
       return $this->t('grouped');
     }
     if (!empty($this->options['exposed'])) {
-      return $this->t('exposed') . ', ' . $this->t('default state') . ': ' . $this->value['status'];
+      return $this->t('exposed') . ', ' . $this->t('default state') . ': ' . $this->value['state'];
     }
     else {
-      return $this->t('Status') . ': ' . $this->value['status'];
+      return $this->t('state') . ': ' . $this->value['state'];
     }
   }
 
