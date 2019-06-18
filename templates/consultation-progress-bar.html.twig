@@ -28,9 +28,9 @@
     <span class="remaining-label">Days remaining</span>
     <span class="remaining-highlight">{{ days_remain|round(0, 'ceil') }}</span> of {{ days_total|round(0, 'ceil') }}
   </div>
-  {% if status_message %}
-    <div class="status-message">
-      {{ status_message }}
+  {% if progress_message %}
+    <div class="progress-message">
+      {{ progress_message }}
     </div>
   {% endif %}
 </div>

@@ -124,6 +124,18 @@ class ConsultationNodeHelper {
     }
   }
 
+  public function getDaysUntil() {
+    $end = $this->getDateEnd('U');
+    $start = $this->getDateStart('U');
+    $now = time();
+
+    if ($now < $start) {
+      return ceil(($start - $now) / 86400);
+    }
+
+    return 0;
+  }
+
   /**
    * Return the percentage complete of the consultation.
    *
@@ -209,7 +221,6 @@ class ConsultationNodeHelper {
     return $output;
   }
 
-
   /**
    * Get the status text of the consultation.
    */
@@ -224,7 +235,25 @@ class ConsultationNodeHelper {
       return 'Now under review';
     }
     else {
-      return 'Have your say';
+      return 'Open';
+    }
+  }
+
+  /**
+   * Get the status text of the consultation.
+   */
+  public function getStatusCode() {
+    if ($this->isSubmissionsNowPublic()) {
+      return 'public';
+    }
+    elseif ($this->isNotStarted()) {
+      return 'upcoming';
+    }
+    elseif ($this->getDaysRemaining() <= 0) {
+      return 'closed';
+    }
+    else {
+      return 'open';
     }
   }
 
@@ -262,18 +291,7 @@ class ConsultationNodeHelper {
       $classes[] = 'cons-submissions-hidden';
     }
 
-    if ($this->isNotStarted()) {
-      $classes[] = 'cons-progress-none';
-    }
-    elseif ($this->isSubmissionsNowPublic()) {
-      $classes[] = 'cons-progress-closed';
-    }
-    elseif ($this->isFinished()) {
-      $classes[] = 'cons-progress-closed';
-    }
-    else {
-      $classes[] = 'cons-progress-open';
-    }
+    $classes[] = 'consultation-' . $this->getStatusCode();
 
     return $classes;
   }

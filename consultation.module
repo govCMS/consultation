@@ -53,8 +53,11 @@ function consultation_theme() {
         'percentage_complete' => NULL,
         'days_remain' => NULL,
         'days_total' => NULL,
+        'days_until' => NULL,
         'status_class' => NULL,
+        'status_code' => NULL,
         'status_message' => NULL,
+        'progress_message' => NULL,
       ],
     ],
   ];
@@ -109,7 +112,10 @@ function consultation_node_view(array &$build, EntityInterface $entity, EntityVi
       '#percentage_complete' => $helper->getPercentageComplete(),
       '#days_remain' => $helper->getDaysRemaining(),
       '#days_total' => $helper->getDaysTotal(),
-      '#status_message' => $helper->getProgressMessage(),
+      '#days_until' => $helper->getDaysUntil(),
+      '#progress_message' => $helper->getProgressMessage(),
+      '#status_message' => $helper->getStatusMessage(),
+      '#status_code' => $helper->getStatusCode(),
     ];
   }
 
@@ -128,7 +134,7 @@ function consultation_node_view(array &$build, EntityInterface $entity, EntityVi
       // @todo do this as a render array.
       '#markup' => '
         <div class="field field--consultation-status field--type-textfield field--label-inline">
-          <div class="field__label">Status:</div>
+          <div class="field__label">Status</div>
           <div class="field__item">' . $helper->getStatusMessage() . '</div>
         </div>',
     ];
@@ -162,7 +168,7 @@ function consultation_preprocess_paragraph(&$variables) {
   // Add icons to consultation_updates paragraphs.
   if ($pg->bundle() == 'consultation_updates') {
     $term = $pg->field_cons_update_type->entity;
-    if ($file = $term->field_cons_update_type_icon->entity) {
+    if ($term && $file = $term->field_cons_update_type_icon->entity) {
       $variables['icon_path'] = $file->URL();
     }
     else {
