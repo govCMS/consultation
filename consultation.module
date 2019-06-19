@@ -156,6 +156,19 @@ function consultation_preprocess_node(&$variables) {
     $variables['attributes']['class'] = [];
   }
   $variables['attributes']['class'] += $helper->getClasses();
+
+  $variables['consultation'] = [
+    'date_start' => $helper->getDateStart(),
+    'date_end' => $helper->getDateEnd(),
+    'percentage_complete' => $helper->getPercentageComplete(),
+    'days_remain' => $helper->getDaysRemaining(),
+    'days_total' => $helper->getDaysTotal(),
+    'days_until' => $helper->getDaysUntil(),
+    'progress_message' => $helper->getProgressMessage(),
+    'status_message' => $helper->getStatusMessage(),
+    'status_code' => $helper->getStatusCode(),
+  ];
+
 }
 
 /**
