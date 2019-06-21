@@ -2,11 +2,11 @@
 
 namespace Drupal\consultation\Controller;
 
+use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\node\NodeInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\consultation\ConsultationNodeHelper;
 
 /**
@@ -37,6 +37,16 @@ class NodeManageSubmissionsRedirect extends ControllerBase {
     }
 
     throw new NotFoundHttpException();
+  }
+
+  /**
+   * Route access checker.
+   *
+   * @param \Drupal\node\NodeInterface $node
+   * @return \Drupal\Core\Access\AccessResult
+   */
+  public function access(NodeInterface $node) {
+    return AccessResult::allowedIf($node->getType() == 'consultation');
   }
 
 }

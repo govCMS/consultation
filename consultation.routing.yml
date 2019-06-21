@@ -15,3 +15,4 @@ consultation.manage_submissions:
     _controller: '\Drupal\consultation\Controller\NodeManageSubmissionsRedirect::handler'
   requirements:
     _permission: 'administer webform submission'
+    _custom_access: 'Drupal\consultation\Controller\NodeManageSubmissionsRedirect::access'
