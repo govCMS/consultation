@@ -7,3 +7,11 @@ consultation.settings:
     _permission: 'administer site configuration'
   options:
     _admin_route: TRUE
+
+# Used for local task for nodes to link to submissions.
+consultation.manage_submissions:
+  path: '/node/{node}/manage-submissions'
+  defaults:
+    _controller: '\Drupal\consultation\Controller\NodeManageSubmissionsRedirect::handler'
+  requirements:
+    _permission: 'administer webform submission'
