@@ -122,8 +122,10 @@ function consultation_node_view(array &$build, EntityInterface $entity, EntityVi
   if ($display->getComponent('consultation_public_submissions')) {
     $build['consultation_public_submissions'] = FALSE;
     if ($helper->isSubmissionsNowPublic()) {
-      $submissions = $helper->getPublicSubmissionsDisplay();
-      $build['consultation_public_submissions'] = $submissions;
+      // If you want to overview this title please preprocess the node.
+      if ($submissions = $helper->getPublicSubmissionsDisplay('Public submissions')) {
+        $build['consultation_public_submissions'] = $submissions;
+      }
     }
   }
 

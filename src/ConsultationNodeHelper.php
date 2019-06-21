@@ -168,7 +168,14 @@ class ConsultationNodeHelper {
     }
   }
 
-  public function getPublicSubmissionsDisplay() {
+  /**
+   * @param $title
+   *   Allows caller to pass a title if not being used in a block scenario. Bit hacky.
+   *
+   * @return array|bool
+   *   Render array. False if no public submissions OR submissions are not public yet.
+   */
+  public function getPublicSubmissionsDisplay($title = FALSE) {
     if (!$this->isSubmissionsNowPublic()) {
       return FALSE;
     }
@@ -190,6 +197,7 @@ class ConsultationNodeHelper {
 
     $storage = \Drupal::entityTypeManager()->getStorage('webform_submission');
     $submissions = $storage->loadMultiple($result);
+    $has_results = FALSE;
     foreach ($submissions as $submission) {
       $data = $submission->getData();
       if (isset($data['uploads'][0]) && self::isSubmissionPublic($submission)) {
@@ -202,6 +210,7 @@ class ConsultationNodeHelper {
           ];
 
           // Add this public submission.
+          $has_results = TRUE;
           $rows[] = [
             'name' => self::getSubmissionPublicName($submission),
             'submission' => ['data' => $render_file],
@@ -211,7 +220,18 @@ class ConsultationNodeHelper {
       }
     }
 
-    $output['table'] = [
+    if (!$has_results) {
+      // Nothing to show.
+      return FALSE;
+    }
+
+    $output['public_submissions'] = [];
+    if ($title) {
+      // This is not ideal hard-coding. Should be done in a template?
+      // Currently this is just a render array with no tempalte.
+      $output['public_submissions']['title'] = ['#markup' => '<h2 class="content-anchor" id="consultation-submissions">' . $title . '</h2>'];
+    }
+    $output['public_submissions']['table'] = [
       '#type' => 'table',
       '#header' => $header_table,
       '#rows' => $rows,
