@@ -374,4 +374,22 @@ class ConsultationNodeHelper {
     return 'Anonymous';
   }
 
+  /**
+   * @return array
+   */
+  public function themeBuildProgressBar() {
+    return [
+      '#theme' => 'consultation_progress_bar',
+      '#date_start' => $this->getDateStart(),
+      '#date_end' => $this->getDateEnd(),
+      '#percentage_complete' => $this->getPercentageComplete(),
+      '#days_remain' => $this->getDaysRemaining(),
+      '#days_total' => $this->getDaysTotal(),
+      '#days_until' => $this->getDaysUntil(),
+      '#progress_message' => $this->getProgressMessage(),
+      '#status_message' => $this->getStatusMessage(),
+      '#status_code' => $this->getStatusCode(),
+    ];
+  }
+
 }

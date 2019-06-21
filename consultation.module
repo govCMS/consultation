@@ -105,18 +105,7 @@ function consultation_node_view(array &$build, EntityInterface $entity, EntityVi
   $build['#attached']['library'][] = 'consultation/styles';
 
   if ($display->getComponent('consultation_progress_bar')) {
-    $build['consultation_progress_bar'] = [
-      '#theme' => 'consultation_progress_bar',
-      '#date_start' => $helper->getDateStart(),
-      '#date_end' => $helper->getDateEnd(),
-      '#percentage_complete' => $helper->getPercentageComplete(),
-      '#days_remain' => $helper->getDaysRemaining(),
-      '#days_total' => $helper->getDaysTotal(),
-      '#days_until' => $helper->getDaysUntil(),
-      '#progress_message' => $helper->getProgressMessage(),
-      '#status_message' => $helper->getStatusMessage(),
-      '#status_code' => $helper->getStatusCode(),
-    ];
+    $build['consultation_progress_bar'] = $helper->themeBuildProgressBar();
   }
 
   if ($display->getComponent('consultation_public_submissions')) {
