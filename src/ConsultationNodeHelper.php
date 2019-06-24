@@ -281,14 +281,16 @@ class ConsultationNodeHelper {
    * Get the progress message of the status bar.
    */
   public function getProgressMessage() {
-    if ($this->isSubmissionsNowPublic()) {
-      return 'Closed';
-    }
-    elseif ($this->isNotStarted()) {
+    if ($this->isNotStarted()) {
       return 'Starts in ' . round(($this->getDateStart('U') - time()) / 86400) . ' days';
     }
     elseif ($this->isFinished()) {
-      return 'Closed';
+      if ($this->isSubmissionsEnabled()) {
+        return 'Submission period extended';
+      }
+      else {
+        return 'Closed';
+      }
     }
     else {
       return 'In progress';
