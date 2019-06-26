@@ -3,3 +3,4 @@ twitter_account: ''
 enable_disqus: 0
 enable_twitter: 0
 enable_private: 1
+fallback_notify_email: ''

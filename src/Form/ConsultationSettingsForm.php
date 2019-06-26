@@ -72,6 +72,13 @@ class ConsultationSettingsForm extends ConfigFormBase {
       '#default_value' => $config->get('twitter_account'),
     ];
 
+    $form['fallback_notify_email'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Default consultation notify email'),
+      '#description' => $this->t('You can optionally override this in the consultation node. Be sure to add the Consultation Notify email handler.'),
+      '#default_value' => $config->get('fallback_notify_email'),
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -112,6 +119,10 @@ class ConsultationSettingsForm extends ConfigFormBase {
 
     $this->config('consultation.settings')
       ->set('twitter_account', $form_state->getValue('twitter_account'))
+      ->save();
+
+    $this->config('consultation.settings')
+      ->set('fallback_notify_email', $form_state->getValue('fallback_notify_email'))
       ->save();
   }
 
