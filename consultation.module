@@ -9,6 +9,7 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\consultation\ConsultationNodeHelper;
 use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\field\FieldStorageConfigInterface;
 
 // The webform element (checkbox) that captures whether the submission should remain private.
@@ -239,4 +240,16 @@ function consultation_views_data_alter(array &$data) {
     ],
   ];
 
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function consultation_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $field_definition = $context['items']->getFieldDefinition();
+  if ($field_definition->getType() == 'webform') {
+    $element['settings']['status']['#title'] = 'Please use the consultation fields to disable the form.';
+    $element['settings']['status']['#disabled'] = TRUE;
+    $element['settings']['status']['#default_value'] = 'open';
+  }
 }
