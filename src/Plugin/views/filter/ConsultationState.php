@@ -57,21 +57,21 @@ class ConsultationState extends FilterPluginBase {
     $end_field_name = substr($start_field_name, 0, -6) . '_end_value';
 
     // Prepare sql clauses for each field.
-    $date_start = $this->query->getDateFormat($this->query->getDateField($start_field_name, TRUE), 'Y-m-d H:i:s', FALSE);
-    $date_end = $this->query->getDateFormat($this->query->getDateField($end_field_name, TRUE), 'Y-m-d H:i:s', FALSE);
+    $date_start = $this->query->getDateFormat($this->query->getDateField($start_field_name, TRUE, FALSE), 'Y-m-d H:i:s', FALSE);
+    $date_end = $this->query->getDateFormat($this->query->getDateField($end_field_name, TRUE, FALSE), 'Y-m-d H:i:s', FALSE);
     $date_now = $this->query->getDateFormat('FROM_UNIXTIME(***CURRENT_TIME***)', 'Y-m-d H:i:s', FALSE);
 
     switch ($this->value['state']) {
       case 'open':
-        $this->query->addWhereExpression($this->options['group'], "$date_now BETWEEN $date_start AND $date_end");
+        $this->query->addWhereExpression($this->options['group'], "($date_now BETWEEN $date_start AND $date_end) OR (node__field_cons_late_subs.field_cons_late_subs_value = 1)");
         break;
 
       case 'closed':
-        $this->query->addWhereExpression($this->options['group'], "$date_now > $date_end");
+        $this->query->addWhereExpression($this->options['group'], "($date_now > $date_end) AND (node__field_cons_late_subs.field_cons_late_subs_value <> 1)");
         break;
 
       case 'upcoming':
-        $this->query->addWhereExpression($this->options['group'], "$date_now < $date_start");
+        $this->query->addWhereExpression($this->options['group'], "($date_now < $date_start) AND (node__field_cons_late_subs.field_cons_late_subs_value <> 1)");
         break;
     }
   }
