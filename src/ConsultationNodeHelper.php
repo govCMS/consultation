@@ -117,7 +117,7 @@ class ConsultationNodeHelper {
       return 0;
     }
     elseif ($start < $now && $now < $end) {
-      return ceil((time() - $start) / 86400);
+      return ceil(($end - $now) / 86400);
     }
     elseif ($end < $now) {
       return 0;
@@ -154,7 +154,8 @@ class ConsultationNodeHelper {
       $seconds_remaining = $this->getDateEnd('U') - time();
       $percentage = $seconds_remaining / $seconds * 100;
       $percentage = max(0, min(100, $percentage));
-      return round($percentage);
+
+      return 100 - round($percentage);
     }
   }
 
