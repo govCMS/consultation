@@ -285,7 +285,7 @@ class ConsultationNodeHelper {
       return 'Starts in ' . round(($this->getDateStart('U') - time()) / 86400) . ' days';
     }
     elseif ($this->isFinished()) {
-      if ($this->isSubmissionsEnabled()) {
+      if ($this->isSubmissionsExtended()) {
         return 'Submission period extended';
       }
       else {
@@ -334,7 +334,10 @@ class ConsultationNodeHelper {
     return (bool) $this->getDaysRemaining() <= 0;
   }
 
-  // @phpcs:ignore
+  public function isSubmissionsExtended() {
+    return (bool) $this->node->field_cons_late_subs->value;
+  }
+
   public function isSubmissionsEnabled() {
     return (bool) $this->node->field_cons_formal_subs_enabled->value;
   }
