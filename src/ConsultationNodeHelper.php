@@ -342,6 +342,11 @@ class ConsultationNodeHelper {
     return (bool) $this->node->field_cons_formal_subs_enabled->value;
   }
 
+  public function isSubmissionsOpenOrExtended() {
+    $return = (bool) ((!$this->isNotStarted() && !$this->isFinished()) || $this->isSubmissionsExtended());
+    return $return;
+  }
+
   public function isSubmissionsNowPublic() {
     return (bool) $this->node->field_cons_formal_subs_public->value;
   }
@@ -391,6 +396,7 @@ class ConsultationNodeHelper {
       '#days_remain' => $this->getDaysRemaining(),
       '#days_total' => $this->getDaysTotal(),
       '#days_until' => $this->getDaysUntil(),
+      '#open_or_extended' => $this->isSubmissionsOpenOrExtended(),
       '#progress_message' => $this->getProgressMessage(),
       '#status_message' => $this->getStatusMessage(),
       '#status_code' => $this->getStatusCode(),
