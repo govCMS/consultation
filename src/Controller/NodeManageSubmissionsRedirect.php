@@ -30,7 +30,7 @@ class NodeManageSubmissionsRedirect extends ControllerBase {
         // We can't pass node/263 or node%3A263 in link options above because they end
         // up node/263 and node%253A263. Whereas we want WebformSubmissionFilterForm
         // to get node%3A263. Unclear if this is a bug or PEBCAK.
-        $admin_url .= '?entity=node%3A263';
+        $admin_url .= '?entity=node%3A' . $node->id();
 
         return new RedirectResponse($admin_url);
       }
