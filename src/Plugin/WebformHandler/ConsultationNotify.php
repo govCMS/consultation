@@ -48,18 +48,15 @@ class ConsultationNotify extends EmailWebformHandler {
    */
   public function sendMessage(WebformSubmissionInterface $webform_submission, array $message) {
     $source = $webform_submission->getSourceEntity();
+    $consultation_settings = $this->configFactory->get('consultation.settings');
+    $email = $consultation_settings->get('fallback_notify_email');
 
-    if ($message['to_mail'] == 'consultation_email') {
+    if ($source && $message['to_mail'] == 'consultation_email') {
       if ($source->hasField('field_cons_formal_subs_notify') && !$source->get('field_cons_formal_subs_notify')->isEmpty()) {
         $email = $source->field_cons_formal_subs_notify->value;
       }
-      else {
-        $consultation_settings = $this->configFactory->get('consultation.settings');
-        $email = $consultation_settings->get('fallback_notify_email');
-      }
-
-      $message['to_mail'] = $email;
     }
+    $message['to_mail'] = $email;
 
     parent::sendMessage($webform_submission, $message);
   }
