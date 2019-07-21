@@ -5,6 +5,7 @@ namespace Drupal\consultation;
 use Drupal\file\Entity\File;
 use Drupal\node\Entity\Node;
 use Drupal\Core\FileTransfer\FileTransfer;
+use Drupal\webform\WebformSubmissionInterface;
 
 /**
  * Provides logic functions for consultation node type.
@@ -181,6 +182,7 @@ class ConsultationNodeHelper {
       return FALSE;
     }
 
+
     $webform = $this->getWebform();
     $webform_id = $webform->id();
     $output = [];
@@ -199,23 +201,27 @@ class ConsultationNodeHelper {
     $storage = \Drupal::entityTypeManager()->getStorage('webform_submission');
     $submissions = $storage->loadMultiple($result);
     $has_results = FALSE;
+    /** @var WebformSubmissionInterface $submission */
     foreach ($submissions as $submission) {
-      $data = $submission->getData();
-      if (isset($data['uploads'][0]) && self::isSubmissionPublic($submission)) {
+      $source_entity = $submission->getSourceEntity();
+      if ($source_entity && $source_entity->id() == $this->node->id()) {
+        $data = $submission->getData();
+        if (isset($data['uploads'][0]) && self::isSubmissionPublic($submission)) {
 
-        $file = File::load($data['uploads'][0]);
-        if ($file && $file->getEntityTypeId() == 'file') {
-          $render_file = [
-            '#theme' => 'file_link',
-            '#file' => $file,
-          ];
+          $file = File::load($data['uploads'][0]);
+          if ($file && $file->getEntityTypeId() == 'file') {
+            $render_file = [
+              '#theme' => 'file_link',
+              '#file' => $file,
+            ];
 
-          // Add this public submission.
-          $has_results = TRUE;
-          $rows[] = [
-            'name' => self::getSubmissionPublicName($submission),
-            'submission' => ['data' => $render_file],
-          ];
+            // Add this public submission.
+            $has_results = TRUE;
+            $rows[] = [
+              'name' => self::getSubmissionPublicName($submission),
+              'submission' => ['data' => $render_file],
+            ];
+          }
         }
 
       }
