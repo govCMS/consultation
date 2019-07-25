@@ -194,8 +194,10 @@ class ConsultationNodeHelper {
     ];
 
     $rows = [];
+    // The results do not run an access check because we determine this in the loop statement.
     $query = \Drupal::entityQuery('webform_submission')
-      ->condition('webform_id', $webform_id);
+      ->condition('webform_id', $webform_id)
+      ->accessCheck(FALSE);
     $result = $query->execute();
 
     $storage = \Drupal::entityTypeManager()->getStorage('webform_submission');
@@ -204,6 +206,7 @@ class ConsultationNodeHelper {
     /** @var WebformSubmissionInterface $submission */
     foreach ($submissions as $submission) {
       $source_entity = $submission->getSourceEntity();
+
       if ($source_entity && $source_entity->id() == $this->node->id()) {
         $data = $submission->getData();
         if (isset($data['uploads'][0]) && self::isSubmissionPublic($submission)) {
