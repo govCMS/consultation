@@ -1,0 +1,7 @@
+views.filter_value.consultation_state:
+  type: mapping
+  label: 'Consultation state'
+  mapping:
+    state:
+      type: string
+      label: 'Consultation state'

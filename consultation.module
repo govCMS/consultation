@@ -1,0 +1,257 @@
+<?php
+
+/**
+ * @file
+ * Module file for consultation.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\consultation\ConsultationNodeHelper;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\field\FieldStorageConfigInterface;
+
+// The webform element (checkbox) that captures whether the submission should remain private.
+define ('CONSULTATION_PRIVATE_ELEMENT', 'private');
+
+// The webform element (checkbox) that captures whether the submitter wishes to remain anonymous.
+define ('CONSULTATION_ANONYMOUS_ELEMENT', 'anonymous');
+
+// The webform element that captures whether an admin has marked the submission for display.
+define ('CONSULTATION_DISPLAY_SUBMISSION_ELEMENT', 'admin_display_approval');
+
+// The value of CONSULTATION_DISPLAY_SUBMISSION_ELEMENT that should display it.
+define ('CONSULTATION_DISPLAY_SUBMISSION_ALLOWED', 'display');
+
+/**
+ * Implements hook_theme().
+ */
+function consultation_theme() {
+  return [
+    // Allow the module to provide a default template for the consultation node.
+    'node__consultation' => [
+      'template' => 'node--consultation',
+      'base hook' => 'node',
+    ],
+    'paragraph__consultation_updates' => [
+      'template' => 'paragraph--consultation-updates',
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__consultation_documentation' => [
+      'template' => 'paragraph--consultation-documentation',
+      'base hook' => 'paragraph',
+    ],
+    'field__field_cons_webform' => [
+      'template' => 'field--field-cons-webform',
+      'base hook' => 'field',
+    ],
+    // The coloured progress bar.
+    'consultation_progress_bar' => [
+      'variables' => [
+        'date_start' => NULL,
+        'date_end' => NULL,
+        'percentage_complete' => NULL,
+        'days_remain' => NULL,
+        'days_total' => NULL,
+        'days_until' => NULL,
+        'open_or_extended' => NULL,
+        'status_class' => NULL,
+        'status_code' => NULL,
+        'status_message' => NULL,
+        'progress_message' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function consultation_entity_extra_field_info() {
+  $extra = [];
+
+  $extra['node']['consultation']['display']['consultation_progress_bar'] = [
+    'label' => t('Progress bar'),
+    'description' => t('Consultation progress bar.'),
+    'weight' => 0,
+    'visible' => TRUE,
+  ];
+
+  $extra['node']['consultation']['display']['consultation_public_submissions'] = [
+    'label' => t('Public submissions'),
+    'description' => t('Formal submissions marked as public.'),
+    'weight' => 0,
+    'visible' => TRUE,
+  ];
+
+  $extra['node']['consultation']['display']['consultation_status'] = [
+    'label' => t('Consultation status'),
+    'description' => t('Text summary of the status of the consultation.'),
+    'weight' => 0,
+    'visible' => TRUE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function consultation_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+
+  if ('consultation' != $entity->bundle()) {
+    return;
+  }
+  $helper = new ConsultationNodeHelper($entity);
+  $build['#attached']['library'][] = 'consultation/styles';
+
+  if ($display->getComponent('consultation_progress_bar')) {
+    $build['consultation_progress_bar'] = $helper->themeBuildProgressBar();
+  }
+
+  if ($display->getComponent('consultation_public_submissions')) {
+    $build['consultation_public_submissions'] = FALSE;
+    if ($helper->isSubmissionsNowPublic()) {
+      // If you want to overview this title please preprocess the node.
+      if ($submissions = $helper->getPublicSubmissionsDisplay('Public submissions')) {
+        $build['consultation_public_submissions'] = $submissions;
+      }
+    }
+  }
+
+  if ($display->getComponent('consultation_status')) {
+    $build['consultation_status'] = [
+      '#type' => 'markup',
+      // Have not figured out how to make the label configurable with hook_entity_extra_field_info().
+      // @todo do this as a render array.
+      '#markup' => '
+        <div class="field field--consultation-status field--type-textfield field--label-inline">
+          <div class="field__label">Status</div>
+          <div class="field__item">' . $helper->getStatusMessage() . '</div>
+        </div>',
+    ];
+  }
+
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function consultation_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ('consultation' != $node->bundle()) {
+    return;
+  }
+  $helper = new ConsultationNodeHelper($node);
+
+  if (!isset($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+  $variables['attributes']['class'] += $helper->getClasses();
+
+  $variables['consultation'] = [
+    'date_start' => $helper->getDateStart(),
+    'date_end' => $helper->getDateEnd(),
+    'percentage_complete' => $helper->getPercentageComplete(),
+    'days_remain' => $helper->getDaysRemaining(),
+    'days_total' => $helper->getDaysTotal(),
+    'days_until' => $helper->getDaysUntil(),
+    'open_or_extended' => $helper->isSubmissionsOpenOrExtended(),
+    'progress_message' => $helper->getProgressMessage(),
+    'status_message' => $helper->getStatusMessage(),
+    'status_code' => $helper->getStatusCode(),
+  ];
+
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function consultation_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $pg */
+  $pg = $variables['paragraph'];
+
+  // Add icons to consultation_updates paragraphs.
+  if ($pg->bundle() == 'consultation_updates') {
+    $term = $pg->field_cons_update_type->entity;
+    if ($term && $file = $term->field_cons_update_type_icon->entity) {
+      $variables['icon_path'] = $file->URL();
+    }
+    else {
+      $module_path = drupal_get_path('module', 'consultation');
+      $variables['icon_path'] = "/$module_path/assets/update_comment.png";
+    }
+  }
+
+  // Prepare variables for consultation_document paragraph.
+  if ($pg->bundle() == 'consultation_documentation') {
+    if ($file = $pg->field_cons_file_pdf->entity) {
+      $variables['pdf_path'] = $file->URL();
+      $variables['pdf_mime'] = $file->filemime->value;
+      $variables['pdf_size'] = $file->filesize->value;
+      $variables['pdf_size_readable'] = format_size($file->filesize->value);
+    }
+    if ($file = $pg->field_cons_file_word->entity) {
+      $variables['doc_path'] = $file->URL();
+      $variables['doc_mime'] = $file->filemime->value;
+      $variables['doc_size'] = $file->filesize->value;
+      $variables['doc_size_readable'] = format_size($file->filesize->value);
+    }
+
+  }
+
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function consultation_entity_access(\Drupal\Core\Entity\EntityInterface $entity, $operation, \Drupal\Core\Session\AccountInterface $account) {
+
+  if ($entity->getEntityTypeId() == 'webform_submission') {
+
+    // The way webform does access checking on file downloads is to access check
+    // the submission. We never want to show the actual full submission to the
+    // the public, just the file. So we add a check for the route that handles
+    // private files.
+    // (And let webform handle everything else.)
+    if (\Drupal::currentUser()->isAnonymous() && 'system.files' == \Drupal::routeMatch()->getRouteName()) {
+      if (ConsultationNodeHelper::isSubmissionFilePublic($entity)) {
+        return AccessResult::allowed();
+      }
+    }
+  }
+
+  return AccessResult::neutral();
+
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function consultation_views_data_alter(array &$data) {
+
+  $data['node__field_cons_date']['consultation_status'] = [
+    'title' => t('Consultation state'),
+    'filter' => [
+      'title' => t('Consultation state'),
+      'group' => t('Content'),
+      'help' => t('Uses the date range to filter by open/closed/upcoming.'),
+      'field' => 'field_cons_date_value',
+      'id' => 'consultation_state',
+    ],
+  ];
+
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function consultation_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $field_definition = $context['items']->getFieldDefinition();
+  if ($field_definition->getType() == 'webform') {
+    $element['settings']['status']['#title'] = 'Please use the consultation fields to disable the form.';
+    $element['settings']['status']['#disabled'] = TRUE;
+    $element['settings']['status']['#default_value'] = 'open';
+  }
+}

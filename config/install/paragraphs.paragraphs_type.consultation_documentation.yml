@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: consultation_documentation
+label: 'Consultations: Issue documentation'
+icon_uuid: null
+description: 'Issue documentation attached to consultation node.'
+behavior_plugins: {  }

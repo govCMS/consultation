@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_formal_subs_cta2
+    - node.type.consultation
+  module:
+    - text
+id: node.consultation.field_cons_formal_subs_cta2
+field_name: field_cons_formal_subs_cta2
+entity_type: node
+bundle: consultation
+label: 'Have Your Say outro'
+description: 'Please provide an outro for the Have Your Say section. This content will display below the ''Have Your Say'' button.'
+required: false
+translatable: false
+default_value:
+  -
+    value: "<p>Alternatively you can complete <a href=\"#\">a response form</a> and either email to [ INSERT EMAIL ADDRESS ] or write to:</p>\r\n\r\n<p><strong>[ INSERT MAILING ADDRESS ]</strong></p>\r\n"
+    format: rich_text
+default_value_callback: ''
+settings: {  }
+field_type: text_long

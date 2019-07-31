@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cons_update_date
+    - paragraphs.paragraphs_type.consultation_updates
+  module:
+    - datetime
+id: paragraph.consultation_updates.field_cons_update_date
+field_name: field_cons_update_date
+entity_type: paragraph
+bundle: consultation_updates
+label: 'Update date'
+description: 'The date this update/milestone occurred on.'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

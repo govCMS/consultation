@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_date
+    - node.type.consultation
+  module:
+    - datetime_range
+id: node.consultation.field_cons_date
+field_name: field_cons_date
+entity_type: node
+bundle: consultation
+label: 'Start/End Date'
+description: 'The starting and end date of a consultation.  This will be used to display progress bars, as well as determining if a Consultation is in ''pre-launch'' vs ''active'' states.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

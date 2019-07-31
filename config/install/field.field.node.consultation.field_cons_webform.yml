@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_webform
+    - node.type.consultation
+  module:
+    - webform
+id: node.consultation.field_cons_webform
+field_name: field_cons_webform
+entity_type: node
+bundle: consultation
+label: 'Formal Submissions form'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
+    target_uuid: 2c992943-4e81-4cf3-824a-9b0c7058e4be
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

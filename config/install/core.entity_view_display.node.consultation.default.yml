@@ -1,0 +1,232 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.consultation.field_cons_comments
+    - field.field.node.consultation.field_cons_date
+    - field.field.node.consultation.field_cons_file_uploads
+    - field.field.node.consultation.field_cons_formal_subs_cta1
+    - field.field.node.consultation.field_cons_formal_subs_cta2
+    - field.field.node.consultation.field_cons_formal_subs_enabled
+    - field.field.node.consultation.field_cons_formal_subs_notify
+    - field.field.node.consultation.field_cons_formal_subs_public
+    - field.field.node.consultation.field_cons_forum_heading
+    - field.field.node.consultation.field_cons_forum_intro
+    - field.field.node.consultation.field_cons_issue_documentation
+    - field.field.node.consultation.field_cons_issue_text
+    - field.field.node.consultation.field_cons_late_subs
+    - field.field.node.consultation.field_cons_outcomes_text
+    - field.field.node.consultation.field_cons_short_comments
+    - field.field.node.consultation.field_cons_summary
+    - field.field.node.consultation.field_cons_updates
+    - field.field.node.consultation.field_cons_webform
+    - node.type.consultation
+  module:
+    - datetime_range
+    - entity_reference_revisions
+    - field_group
+    - text
+    - user
+    - webform
+third_party_settings:
+  field_group:
+    group_summary_updates:
+      children:
+        - field_cons_updates
+      parent_name: group_summary
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: 'group-updates field-group-htab'
+        formatter: closed
+        description: ''
+      label: 'Updates and Milestones'
+      region: content
+    group_summary_issue:
+      children:
+        - field_cons_date
+        - field_cons_issue_text
+        - field_cons_issue_documentation
+      parent_name: group_summary
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: 'group-issue field-group-htab'
+        formatter: open
+        description: ''
+      label: 'The issue'
+      region: content
+    group_summary_outcome:
+      children:
+        - field_cons_outcomes_text
+      parent_name: group_summary
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: 'group-outcomes field-group-htab tabber__pane--no-space'
+        formatter: closed
+        description: ''
+      label: Outcomes
+      region: content
+    group_summary:
+      children:
+        - group_summary_issue
+        - group_summary_updates
+        - group_summary_outcome
+      parent_name: ''
+      weight: 2
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: 'group-consultation-htabs field-group-htabs'
+        direction: horizontal
+      label: 'Consultation tabs'
+      region: content
+    group_formalsubs:
+      children:
+        - consultation_progress_bar
+        - field_cons_formal_subs_cta1
+        - field_cons_webform
+        - field_cons_formal_subs_cta2
+      parent_name: ''
+      weight: 3
+      format_type: html_element
+      format_settings:
+        element: div
+        show_label: true
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: 'group-formal-submissions field-group-div layout-max spacer--medium'
+      label: Participate
+      region: content
+id: node.consultation.default
+targetEntityType: node
+bundle: consultation
+mode: default
+content:
+  consultation_progress_bar:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  consultation_public_submissions:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  consultation_status:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cons_date:
+    weight: 3
+    label: inline
+    settings:
+      timezone_override: ''
+      format_type: medium
+      separator: '-'
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_cons_formal_subs_cta1:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_formal_subs_cta2:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_forum_heading:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_cons_forum_intro:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_issue_documentation:
+    type: entity_reference_revisions_entity_view
+    weight: 5
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_cons_issue_text:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_outcomes_text:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_summary:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cons_updates:
+    type: entity_reference_revisions_entity_view
+    weight: 24
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_cons_webform:
+    weight: 3
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+  progress_bar:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  public_submissions:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_cons_comments: true
+  field_cons_file_uploads: true
+  field_cons_formal_subs_enabled: true
+  field_cons_formal_subs_notify: true
+  field_cons_formal_subs_public: true
+  field_cons_late_subs: true
+  field_cons_short_comments: true
+  links: true

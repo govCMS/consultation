@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: consultation_updates
+label: 'Consultations: Updates'
+icon_uuid: null
+description: 'Updates attached to a consultation.'
+behavior_plugins: {  }

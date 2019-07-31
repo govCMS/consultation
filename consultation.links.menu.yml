@@ -1,0 +1,6 @@
+consultation.settings:
+  title: 'Consultation'
+  route_name: consultation.settings
+  description: 'Consultation'
+  parent: system.admin_config_system
+  weight: 99

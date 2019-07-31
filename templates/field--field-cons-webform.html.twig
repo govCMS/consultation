@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Override the webform twig.
+ *
+ * @see field.html.twig()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+<button class="button-primary form-submit submission-show-form">Have Your Say Now</button>
+
+<div class="submission-form-wrapper" style="display: none;">
+  {% if label_hidden %}
+    {% if multiple %}
+      <div{{ attributes }}>
+        {% for item in items %}
+          <div{{ item.attributes }}>{{ item.content }}</div>
+        {% endfor %}
+      </div>
+    {% else %}
+      {% for item in items %}
+        <div{{ attributes }}>{{ item.content }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+</div>

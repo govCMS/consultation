@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.consultation.field_cons_comments
+    - field.field.node.consultation.field_cons_date
+    - field.field.node.consultation.field_cons_file_uploads
+    - field.field.node.consultation.field_cons_formal_subs_cta1
+    - field.field.node.consultation.field_cons_formal_subs_cta2
+    - field.field.node.consultation.field_cons_formal_subs_enabled
+    - field.field.node.consultation.field_cons_formal_subs_notify
+    - field.field.node.consultation.field_cons_formal_subs_public
+    - field.field.node.consultation.field_cons_forum_heading
+    - field.field.node.consultation.field_cons_forum_intro
+    - field.field.node.consultation.field_cons_issue_documentation
+    - field.field.node.consultation.field_cons_issue_text
+    - field.field.node.consultation.field_cons_late_subs
+    - field.field.node.consultation.field_cons_outcomes_text
+    - field.field.node.consultation.field_cons_short_comments
+    - field.field.node.consultation.field_cons_summary
+    - field.field.node.consultation.field_cons_updates
+    - field.field.node.consultation.field_cons_webform
+    - node.type.consultation
+  module:
+    - user
+id: node.consultation.teaser
+targetEntityType: node
+bundle: consultation
+mode: teaser
+content:
+  consultation_progress_bar:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  consultation_public_submissions:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  consultation_status:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_cons_comments: true
+  field_cons_date: true
+  field_cons_file_uploads: true
+  field_cons_formal_subs_cta1: true
+  field_cons_formal_subs_cta2: true
+  field_cons_formal_subs_enabled: true
+  field_cons_formal_subs_notify: true
+  field_cons_formal_subs_public: true
+  field_cons_forum_heading: true
+  field_cons_forum_intro: true
+  field_cons_issue_documentation: true
+  field_cons_issue_text: true
+  field_cons_late_subs: true
+  field_cons_outcomes_text: true
+  field_cons_short_comments: true
+  field_cons_summary: true
+  field_cons_updates: true
+  field_cons_webform: true

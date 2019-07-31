@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.consultation_update_type.field_cons_update_type_icon
+    - taxonomy.vocabulary.consultation_update_type
+  module:
+    - file
+    - text
+id: taxonomy_term.consultation_update_type.default
+targetEntityType: taxonomy_term
+bundle: consultation_update_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_cons_update_type_icon:
+    weight: 1
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+hidden: {  }

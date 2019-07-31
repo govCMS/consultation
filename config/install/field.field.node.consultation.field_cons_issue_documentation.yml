@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_issue_documentation
+    - node.type.consultation
+    - paragraphs.paragraphs_type.consultation_documentation
+  module:
+    - entity_reference_revisions
+id: node.consultation.field_cons_issue_documentation
+field_name: field_cons_issue_documentation
+entity_type: node
+bundle: consultation
+label: 'Relevant Documentation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      consultation_documentation: consultation_documentation
+    target_bundles_drag_drop:
+      consultation_documentation:
+        enabled: true
+        weight: 9
+      cta:
+        weight: 10
+        enabled: false
+      consultation_updates:
+        weight: 11
+        enabled: false
+      curated:
+        weight: 11
+        enabled: false
+      data:
+        weight: 12
+        enabled: false
+      existingblock:
+        weight: 13
+        enabled: false
+      html:
+        weight: 14
+        enabled: false
+      links:
+        weight: 15
+        enabled: false
+      namedpage:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

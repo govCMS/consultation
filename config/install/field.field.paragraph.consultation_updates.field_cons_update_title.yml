@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cons_update_title
+    - paragraphs.paragraphs_type.consultation_updates
+id: paragraph.consultation_updates.field_cons_update_title
+field_name: field_cons_update_title
+entity_type: paragraph
+bundle: consultation_updates
+label: 'Update title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

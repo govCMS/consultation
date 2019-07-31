@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_cons_submission_date
+    - paragraphs.paragraphs_type.consultation_documentation
+  module:
+    - datetime
+id: paragraph.consultation_documentation.field_cons_submission_date
+field_name: field_cons_submission_date
+entity_type: paragraph
+bundle: consultation_documentation
+label: 'Submission date'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

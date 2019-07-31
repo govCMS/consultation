@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+name: Consultation
+type: consultation
+description: 'Consultations are to engage with the general public on a given topic and incorporate the Have Your Say functionality.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

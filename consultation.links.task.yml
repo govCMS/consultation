@@ -1,0 +1,5 @@
+consultation.manage_submissions:
+  route_name: 'consultation.manage_submissions'
+  title: 'Submissions'
+  weight: 100
+  base_route: entity.node.canonical

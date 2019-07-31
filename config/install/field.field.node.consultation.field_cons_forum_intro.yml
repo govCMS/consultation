@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cons_forum_intro
+    - node.type.consultation
+  module:
+    - text
+id: node.consultation.field_cons_forum_intro
+field_name: field_cons_forum_intro
+entity_type: node
+bundle: consultation
+label: 'Discussion Forum introduction'
+description: 'When filled in and when comments are enabled; this introduction will display above the Discussion component.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

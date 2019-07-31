@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Paragraph override for consultation_documentation.
+ *
+ * @see paragraph.html.twig()
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="paragraph-content">
+    {% block content %}
+      <div class="consultation-document-list">
+        <div about="" typeof="" class="ds-1col document-list__inner entity entity-paragraphs-item paragraphs-item-issue-documentation view-mode-full clearfix">
+          <h4 class="document-title">{{ content.field_cons_file_title }}</h4>
+          <p class="document-date">Published {{ content.field_cons_submission_date.date|date("d M Y") }}</p>
+          <div class="document-files">
+            <span class="file-pdf">
+              <img alt="" class="file-icon" src="/core/themes/classy/images/icons/application-pdf.png" title="application/pdf">
+              <a href="{{ pdf_path }}" type="{{ pdf_mime }}; length={{ pdf_size}}">Download PDF</a>
+              <span class="file-size">({{ pdf_size_readable }})</span>
+            </span>
+            <span class="file-doc">
+              <img alt="" class="file-icon" src="/core/themes/classy/images/icons/x-office-document.png" title="application/docx">
+              <a href="{{ doc_path }}" type="{{ doc_mime }}; length={{ doc_size }}">Download Doc</a>
+              <span class="file-size">({{ doc_size_readable }})</span>
+            </span>
+          </div>
+          <div class="document-description">
+            {{ content.field_cons_file_description }}
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+    </div>
+  </div>
+{% endblock paragraph %}
