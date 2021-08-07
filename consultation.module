@@ -176,7 +176,7 @@ function consultation_preprocess_paragraph(&$variables) {
   if ($pg->bundle() == 'consultation_updates') {
     $term = $pg->field_cons_update_type->entity;
     if ($term && $file = $term->field_cons_update_type_icon->entity) {
-      $variables['icon_path'] = $file->URL();
+      $variables['icon_path'] = $file->toUrl();
     }
     else {
       $module_path = drupal_get_path('module', 'consultation');
@@ -187,13 +187,13 @@ function consultation_preprocess_paragraph(&$variables) {
   // Prepare variables for consultation_document paragraph.
   if ($pg->bundle() == 'consultation_documentation') {
     if ($file = $pg->field_cons_file_pdf->entity) {
-      $variables['pdf_path'] = $file->URL();
+      $variables['pdf_path'] = $file->toUrl();
       $variables['pdf_mime'] = $file->filemime->value;
       $variables['pdf_size'] = $file->filesize->value;
       $variables['pdf_size_readable'] = format_size($file->filesize->value);
     }
     if ($file = $pg->field_cons_file_word->entity) {
-      $variables['doc_path'] = $file->URL();
+      $variables['doc_path'] = $file->toUrl();
       $variables['doc_mime'] = $file->filemime->value;
       $variables['doc_size'] = $file->filesize->value;
       $variables['doc_size_readable'] = format_size($file->filesize->value);
